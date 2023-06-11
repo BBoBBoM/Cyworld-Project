@@ -1,0 +1,474 @@
+* {
+	margin: 0 auto;
+	box-sizing: border-box;
+	list-style: none;
+	
+}
+a{text-decoration: none;color:black;}
+a:link {
+  text-decoration: none; /* 방문하지 않은 링크 스타일 */
+}
+
+a:visited {
+  text-decoration: none; /* 방문한 링크 스타일 */
+}
+
+a:hover {
+  text-decoration: underline;color:purple; /* 호버 상태의 링크 스타일 */
+}
+
+a:active {
+  text-decoration: none; /* 클릭한 링크 스타일 */
+}
+
+#mini_container {
+	width: 1400px;
+	height: 850px;
+	position: relative;
+}
+
+#mini_background1 {
+	width: 100%;
+	height: 100%;
+	background: url(background/background.png) no-repeat center;
+	background-size: cover;
+	position: absolute;
+}
+
+#mini_background2 {
+	width: 95%;
+	height: 95%;
+	margin-top: 25px;
+	background: url(background/outer.png) no-repeat center;
+	background-size: cover;
+	background-size: 100% 100%;
+}
+
+#all_contentsdiv {
+	width: 1300px;
+	height: 800px;
+}
+
+#left_contentsborderdiv {
+	float: left;
+	margin-top: 10px;
+	width: 375px;
+	height: 760px;
+}
+
+#center_contentsdiv {
+	margin-top: 10px;
+	box-sizing: border-box;
+	margin-right: 0px;
+	width: 700px;
+	float: left;
+	height: 760px;
+
+}
+
+#center_contentsdiv1 {
+	width: 675px;
+	float: left;
+	height: 670px;
+border:1px solid black;
+	padding:10px;
+	border-radius: 15px 0px 0px 15px;
+}
+
+#center_subject {
+	margin-left: 23px;
+	height: 6%;
+
+	margin-top: 30px;
+}
+
+#left_contents_visitrate {
+	position: relative;
+	margin-left: 45px;
+	margin-top: 35px;
+	margin-bottom: 0px;
+	width: 80%;
+	height: 5%;
+}
+
+#left_contents_visitrate>label {
+	position: absolute;
+	top: 10%;
+	left: 25%;
+}
+
+#right_contentsdiv_border {
+	width: 180px;
+	height: 760px;
+	float: left;
+	margin: 10px 0px;
+	padding: 0px;
+	position: relative;
+}
+
+#today_feeling {
+	position: absolute;
+	height: 3%;
+	top: 33%;
+	padding-left: 5%
+}
+
+#left_contentsdiv {
+	margin-right: 0px;
+	padding: 0px;
+	width: 320px;
+	margin-left: 35px;
+	float: left;
+	height: 680px;
+}
+
+#left_contentsdiv1 {
+	width: 100%;
+	height: 99%;
+	
+}
+
+#left_contents_userinfo {
+	height: 100%;
+	border-radius: 15px;
+	padding: 5px;
+	position: relative;
+	border: 1px solid black;
+}
+
+#left_contents_userinfo>div {
+	position: absolute;
+	width: 94%;
+}
+
+#user_profileimg {
+	width: 100%;
+	height: 30%;
+}
+
+
+
+.myself_introduce {
+	height: 29%;
+	top: 41%;
+	word-wrap: break-word;
+	overflow-y: scroll;
+	padding: 6%;
+	color: purple;
+	position: relative;
+	background-color: rgb(233, 233, 233);
+}
+
+#today_feeling {
+	padding: 10px;
+}
+
+#today_feeling>span {
+	position: absolute;
+	animation: move .7s ease infinite alternate;
+	color: #750731;
+}
+
+@keyframes move {
+	100% {
+		left: 3px;
+
+
+
+
+	}
+}
+
+#user_name_email {
+	font-size: 120%;
+	height: 10%;
+	top: 73%;
+	padding-left: 5%;
+	animation: textColor 3s linear infinite;
+}
+
+@keyframes textColor {
+	0% {
+		color: red;
+	}
+
+	25% {
+		color: rgb(212, 0, 255);
+	}
+
+	50% {
+		color: blue;
+	}
+
+	75% {
+		color: rgb(217, 255, 0);
+	}
+
+	100% {
+		color: green;
+	}
+}
+
+#cousin_select {
+	height: 15%;
+	top: 84%;
+	padding-left: 5%;
+}
+
+#ilchon {
+	width: 80%;
+	margin-top: 2%;
+	height: 30%;
+}
+
+
+#center_contentsdiv1 {
+	width: 685px;
+	float: left;
+	height: 680px;
+border-right:1px solid black;
+	margin-left: 13px;
+	border-radius: 15px 0px 0px 15px;
+}
+
+#center_contents {
+	margin-left: 5px;
+	word-wrap: break-word;
+	overflow-y: scroll;
+	height: 99%;
+}
+
+
+
+.radiofeel {
+	margin-left: 5%;
+	margin-top: 2%;
+}
+
+
+
+
+#user_mini_subject {
+	width: 100%;
+}
+
+.user_mini_subject2 {
+	width: 60%;
+	font-size: 28px;
+	float: left;
+	font-size: 36px;
+	color: linear-gradient(45deg, #ff6b6b, #a25eff, #4bc0c8);
+	animation: textColor1 5s linear infinite;
+}
+.user_mini_subject2:hover{cursor:pointer;}
+
+
+@keyframes textColor1 {
+	0% {
+		color: purple;
+	}
+
+	25% {
+		color: rgb(152, 0, 205);
+	}
+
+	50% {
+		color: violet;
+	}
+
+	75% {
+		color: rgb(117, 55, 0);
+	}
+
+	100% {
+		color: gray;
+	}
+}
+
+
+#cyworld_url {
+	width: 40%;
+	padding-top: 3%;
+	text-align: right;
+	padding-right: 1%;
+	float: right;
+}
+
+#right_contentsdiv {
+	width: 180px;
+	height: 613px;
+	float: left;
+}
+
+#right_menu {
+	width: 100px;
+	height: 320px;
+	margin-top: 180px;
+	float: left;
+}
+
+#feel_img {
+	width: 15px;
+	height: 15px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#right_menu>div {
+	padding: 5px;
+	height: 40px;
+	border-radius: 15px;
+	margin-bottom: 7px;
+	border: 1px solid black;
+	cursor:pointer;
+	
+	
+
+}
+#right_menu>div:hover{cursor:pointer;
+  color: #CC333F;
+  border: 1px solid;	
+  box-shadow: 0 0 0 1px, 0 0 0 2px #F8CA00, 0 0 0 3px, 0 0 0 4px #E97F02;
+  border-radius: 20px;
+  animation: gradient1 1s ease ;
+   background: linear-gradient(-45deg, #eff3de, #d3f7ec, #fadfd8, #efd4ff);
+   
+	background-size: 300% 300%;
+	font-size: large;
+	margin-left:2px;
+	color : red;
+}
+
+@keyframes gradient1{
+
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+
+
+#right_menu>div>a {
+	margin-left: 5px;
+	line-height: 30px;
+}
+
+#right_music {
+	position: absolute;
+	margin-left: 10px;
+	top: 36px;
+	width: 82%;
+	height: 17%;
+}
+
+#right_purchase_contents {
+	position: absolute;
+	top: 81%;
+	height: 17%;
+	margin-left: 10px;
+	width: 83%;
+}
+
+#photo_edit_button {
+	position: absolute;
+	bottom: 0%;
+	right: 0%;
+}
+
+#feel_edit_button {
+	position: absolute;
+	top: 0%;
+	right: 0%;
+}
+
+.edit_button {
+	position: absolute;
+	bottom: 0%;
+	right: 0%;
+}
+
+
+
+.subject_edit_button {
+	float: right;
+	margin-left: 2%;
+}
+
+#introduce_edit_button {
+
+	position: absolute;
+	bottom: 30%;
+	right: 10%;
+}
+
+
+
+
+#right_music {
+	position: absolute;
+	margin-left: 10px;
+	top: 36px;
+	width: 82%;
+	height: 17%;
+	border: 1px solid rebeccapurple;
+}
+
+
+
+#center_diarycontentsdiv1 {
+	box-sizing: border-box;
+	width: 650px;
+	float: right;
+	height: 645px;
+	border: 1px solid rgb(70, 144, 241);
+	margin-left: 13px;
+	margin-top: 20px;
+	word-wrap: break-word;
+	overflow-y: scroll;
+}
+
+#center_diary_contents {
+	width: 550px;
+	height: 300px;
+	border: 1px solid red;
+	margin-left: 45px;
+	margin-top: 130px;
+}
+
+#center_diary_calendar {
+	width: 550px;
+	height: 120px;
+	border: 1px solid rgb(233, 19, 161);
+	margin-left: 45px;
+	position: fixed;
+}
+
+
+input {
+	height: 20px;
+	font-size: 15px;
+	margin-bottom: 3px;
+}
+
+
+.center_diary_box {
+	width: 550px;
+	height: 300px;
+}
+
+
+
+#dotori_div{border:1px solid;
+		   position:absolute;
+		   width:10%;
+		   bottom:15%;right:9%;}

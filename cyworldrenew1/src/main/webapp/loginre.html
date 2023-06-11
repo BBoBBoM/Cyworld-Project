@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="login.css" rel="stylesheet" type="text/css" />
+    <style>
+
+
+    </style>
+</head>
+<body>
+    <div id="imgboxbox">
+        <div id="imgbox" class="imgbox">
+            <img id="img1" class="imgslide" src="cyworld login.jpg">
+            <img id="img2" class="imgslide" src="cyworld login1.jpg">
+            <img id="img3" class="imgslide" src="cyworld login2.jpg">
+        </div>
+    </div>
+
+
+
+    <div id="alldiv">
+
+        <div id="subject_menudiv">
+            <header id="header1">
+                <div id="cyworld_logo"></div>
+                <label>Cyworld</label>
+            </header>
+            <div id="menudiv1">
+                <nav id="menudiv_menu">
+                    <ul>메뉴1</ul>
+                    <ul>메뉴2</ul>
+                    <ul>메뉴3</ul>
+                    <ul>메뉴4</ul>
+                </nav>
+                <div id="menulistdiv">
+                    <ul>
+                        <li>서브1</li>
+                        <li>서브2</li>
+                        <li>서브3</li>
+                        <li>서브4</li>
+                        <li>서브5</li>
+                    </ul>
+                    <ul>
+                        <li>서브1</li>
+                        <li>서브2</li>
+                        <li>서브3</li>
+                        <li>서브4</li>
+                        <li>서브5</li>
+                    </ul>
+                    <ul>
+                        <li>서브1</li>
+                        <li>서브2</li>
+                        <li>서브3</li>
+                        <li>서브4</li>
+                        <li>서브5</li>
+                    </ul>
+                    <ul>
+                        <li>서브1</li>
+                        <li>서브2</li>
+                        <li>서브3</li>
+                        <li>서브4</li>
+                        <li>서브5</li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+        <div id="logindiv">
+            <div id="logindiv1">
+                <div id="login_name" class="login">
+                    <div></div>CYWORLD
+                </div>
+
+                <div id="login_id" class="login"><input type="text" placeholder="아이디를 입력하세요"> </div>
+                <div id="login_pwd" class="login"><input type="text" placeholder="비밀번호를 입력하세"></div>
+                <div id="login_button" class="login"><a href=""></a></div>
+                <div id="login_join_search" class="login">아이디/비밀번호 찾기 || 회원가입</div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+    <script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+    <script>
+       $(function(){setInterval(function(){
+        $("#imgbox").animate({left:"-100%"},700,function(){let img = $("#imgbox> img").eq(0).detach()
+    $("#imgbox").css("left","0px")
+    $("#imgbox").append(img)})
+       },2000)})
+    </script>
+</body>
+</html>
