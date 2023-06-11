@@ -16,36 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user`
+-- Table structure for table `profile`
 --
 
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `profile`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user` (
-  `user_id` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `user_name` varchar(10) NOT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  `birthday` varchar(10) DEFAULT NULL,
-  `gender` varchar(2) DEFAULT NULL,
-  `phone_number` varchar(15) DEFAULT NULL,
-  `address` varchar(30) DEFAULT NULL,
-  `cyworld_url` varchar(45) DEFAULT NULL,
-  `joindate` date DEFAULT NULL,
-  `dotori` int DEFAULT NULL,
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+CREATE TABLE `profile` (
+  `profile_number` int NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(45) DEFAULT NULL,
+  `user_profile_photo` varchar(45) DEFAULT NULL,
+  `user_profile_photo1` varchar(45) DEFAULT NULL,
+  `user_basic_info` varchar(2000) DEFAULT NULL,
+  `user_mini_subject` varchar(45) DEFAULT NULL,
+  `user_hello_word` varchar(200) DEFAULT NULL,
+  `user_miniroom_file` varchar(45) DEFAULT NULL,
+  `user_introduce_text` varchar(2200) DEFAULT NULL,
+  PRIMARY KEY (`profile_number`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `profile`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('123','123','123','123@naver.com','1234/02/1','남','12345678910','','https://cyworld.com/123','2023-06-09',500),('3321','213','슈퍼맨','tkrhkakt1@gmail.com','1999/10/30','남','010-4525-3438','대구 북구','https://cyworld.com/3321','2023-05-30',NULL);
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+LOCK TABLES `profile` WRITE;
+/*!40000 ALTER TABLE `profile` DISABLE KEYS */;
+INSERT INTO `profile` VALUES (4,'3321','latte.jpg','americano1.png',NULL,'ㅇㄹ','dfdxzsdf',NULL,'<br>        <br>이름 : 뽀뽀맨<br><br>나이: 123<br><br><br>    ');
+/*!40000 ALTER TABLE `profile` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-11 22:45:31
+-- Dump completed on 2023-06-11 22:45:30
