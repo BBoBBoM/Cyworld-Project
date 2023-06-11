@@ -72,6 +72,13 @@ try {
 
 
 <body>
+  <script>
+    // 이전 페이지 새로고침
+    if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
+      location.reload();
+    }
+  </script>
+<script src="profile.js"></script>
 	<div id="mini_container">
 		<div id="mini_background1">
 			<div id="mini_background2">
@@ -133,27 +140,6 @@ try {
 								</div>
 							</div>
 
-							<script>
-								function showTextArea1() {
-									document
-											.getElementById('user_mini_subject2').style.display = 'none';
-									document.getElementById('subjectarea').style.display = 'block';
-								}
-
-								function saveText1() {
-									// 텍스트 저장 처리 및 다음 페이지로 이동
-									// ...
-									document.getElementById('subjectarea').style.display = 'none';
-									document
-											.getElementById('user_mini_subject2').style.display = 'block';
-								}
-
-								function cancelEdit1() {
-									document.getElementById('subjectarea').style.display = 'none';
-									document
-											.getElementById('user_mini_subject2').style.display = 'block';
-								}
-							</script>
 						</div>
 
 						<div id="center_contentsdiv1">
@@ -181,32 +167,27 @@ try {
 											id="fileinput" name="fileinput" style="display: none;">
 									</form>
 
-									<script>
-											// 파일 선택 창 열기 및 자동 전환
-											function selectFile() {
-												document.getElementById(
-														'fileinput').click();
-											}
-
-											// 파일이 선택되었을 때 자동으로 페이지 전환
-											document
-													.getElementById('fileinput')
-													.addEventListener(
-															'change',
-															function() {
-																document
-																		.getElementById(
-																				'edit_input')
-																		.click();
-															});
-										</script>
-
-
-
 								</div>
 								<div id="center_profile_content">
 
+<script>
+// 파일 선택 창 열기 및 자동 전환
+function selectFile() {
+	document.getElementById(
+		'fileinput').click();
+}
 
+// 파일이 선택되었을 때 자동으로 페이지 전환
+document
+	.getElementById('fileinput')
+	.addEventListener(
+		'change',
+		function() {
+			document
+				.getElementById(
+					'edit_input')
+				.click();
+		});</script>
 
 <div id="profile_introduce_border1" style="position:relative;">
     <button onclick="showTextArea()">수정하기</button>
@@ -222,25 +203,6 @@ try {
     </form>
 </div>
 
-<script>
-    function showTextArea() {
-        let fileContentDiv = document.getElementById("fileContent");
-        let textarea = document.getElementById("filecontent_textarea");
-        textarea.value = fileContentDiv.innerHTML.replace(/<br>/g, '\n');
-      
-        document.getElementById('profile_introduce_border1').style.display = 'none';
-        document.getElementById('profile_introduce_border2').style.display = 'block';
-    }
-
-    
-    function cancelEdit() {
-        document.getElementById('profile_introduce_border2').style.display = 'none';
-        document.getElementById('profile_introduce_border1').style.display = 'block';
-        let fileContentDiv = document.getElementById("fileContent");
-        let textarea = document.getElementById("filecontent_textarea");
-        textarea.value = fileContentDiv.innerHTML.replace(/<br>/g, '\n');
-    }
-</script>
 							</div></div>
 						</div>
 					</div>

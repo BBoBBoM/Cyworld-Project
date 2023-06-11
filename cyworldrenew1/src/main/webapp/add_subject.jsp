@@ -31,10 +31,10 @@ String subjectText = request.getParameter("subjectText");
 
 	
 		alert("미니홈페이지 제목이 수정되었습니다");
-
+history.go(-1);
 		</script>
 		<%}	
-	response.sendRedirect("index.jsp");
+	
 
 	%>
 	

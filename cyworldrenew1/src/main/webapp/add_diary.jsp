@@ -38,10 +38,10 @@ int number = 0;
 
 	
 		alert("<%=date%>일기가 등록되었습니다");
-
+		history.go(-1);
 		</script>
 		<%}	
-	response.sendRedirect("diary.jsp");
+
 
 	%>
 	

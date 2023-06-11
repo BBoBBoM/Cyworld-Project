@@ -49,9 +49,9 @@ String uploadPath = request.getRealPath("userprofileimg");
 
 	
 		alert("프로필 사진이 새롭게 업로드 되었어요");
-
+		history.go(-1);
 		</script>
-		<%}			response.sendRedirect("profile.jsp");
+		<%}
 	%>
 
 

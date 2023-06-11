@@ -103,6 +103,12 @@ try {
 </head>
 
 <body>
+  <script>
+    // 이전 페이지 새로고침
+    if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
+      location.reload();
+    }
+  </script>
 	<div id="mini_container">
 		<div id="mini_background1">
 			<div id="mini_background2">

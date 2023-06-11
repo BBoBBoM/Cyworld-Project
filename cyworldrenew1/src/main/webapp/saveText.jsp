@@ -25,6 +25,7 @@ PreparedStatement pstmt = null;
 	    e.printStackTrace(); 
 	}
 %>
-
-
-<%response.sendRedirect("profile.jsp");%>
+<script type="text/javascript">
+alert("개인정보가 수정되었습니다.");
+history.go(-1);
+</script>

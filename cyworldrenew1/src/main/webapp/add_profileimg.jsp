@@ -47,10 +47,10 @@ String uploadPath = request.getRealPath("userprofileimg");
 
 	
 		alert("프로필 사진이 변경되었습니다");
-
+history.go(-1);
 		</script>
 		<%}	
-	response.sendRedirect("index.jsp");
+
 
 	%>
 	

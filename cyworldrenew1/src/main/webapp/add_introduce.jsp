@@ -33,10 +33,10 @@ introText= introText.replace("\r\n","<br>");
 
 	
 		alert("자기소개가 수정되었습니다");
-
+		history.go(-1);
 		</script>
 		<%}	
-	response.sendRedirect("index.jsp");
+
 
 	%>
 	
