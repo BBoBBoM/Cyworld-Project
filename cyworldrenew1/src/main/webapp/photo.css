@@ -512,11 +512,12 @@ input {
 	margin-left: 45px;
 	margin-top: 30px;
 }
+#save_photo_img{	width: 550px;
+height: 300px;
 
-#wrap {
-	width: 550px;
-	height: 100px;
-}
+margin-left: 45px;
+margin-top: 30px;}
+
 
 .center_photo_box {
 	width: 550px;

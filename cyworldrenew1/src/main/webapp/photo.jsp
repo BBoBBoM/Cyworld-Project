@@ -432,6 +432,7 @@ try {
 								<div id="center_contents">
 							<div id="center_photocontentsdiv">
 								<div id="center_photocontentsdiv1">
+								<button onclick="center_photo_hide()" style="position: absolute;top:15%; right:23%">사진올리기</button>
 									<div id="center_photo_subject">사진첩</div>
 									<div id="center_photo_contents">
 
@@ -447,6 +448,7 @@ try {
 											<%=photo_contents.get(i)%>
 										</div>
 										<br>
+										<hr size="5px" color="blue">
 										<br>
 										<%
 										}
@@ -458,8 +460,21 @@ try {
 										%>
 									</div>
 
+<div id="save_photo_img" style="display:none;"><form action="save_photo_img.jsp" method="post" enctype="multipart/form-data">
+<input type="file"name="photo_url" id="photo_url" style="height: 10%;"><br><br>
+<textarea style="width:100%;height:75%" placeholder="사진의 내용을 입력해주세요" id="F"name="photo_contents"></textarea>
+<br><br><button type="reset" onclick="center_photo_block()"style="float:right">취소</button>
+<button type="submit"  style="float:right">저장</button>
 
+</form></div>
+<script>
+function center_photo_hide(){									
+	document.getElementById('center_photo_contents').style.display = 'none';
+document.getElementById('save_photo_img').style.display = 'block';}
+function center_photo_block(){	document.getElementById('save_photo_img').style.display = 'none';
+document.getElementById('center_photo_contents').style.display = 'block';} 
 
+</script>
 
 								</div>
 

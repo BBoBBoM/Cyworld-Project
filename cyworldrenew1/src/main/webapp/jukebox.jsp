@@ -92,6 +92,12 @@ try {
 </head>
 
 <body>
+ <script>
+    // 이전 페이지 새로고침
+    if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
+      location.reload();
+    }
+  </script>
 	<div id="mini_container">
 		<div id="mini_background1">
 			<div id="mini_background2">
@@ -485,7 +491,7 @@ let audioPlayer = document.getElementById('audioPlayer');
 let audioSource = document.getElementById('audioSource');
 let subjectname = document.getElementById('subjectname');
 
-function playaudio(name) {
+function playaudio(name){
 	audioPlayer.pause();
 	audioSource.src = name;
 	audioPlayer.load();
@@ -493,7 +499,7 @@ function playaudio(name) {
 	subjectname.innerHTML =name.replace('music/', '') + ' 재생중';   
 }
 
-function play() {
+function play(){
     audioPlayer.pause();
     audioSource.src = "music/" + src[currentIndex];
     audioPlayer.load();
@@ -504,7 +510,7 @@ function play() {
 }
 
 
-function pre_song() {
+function pre_song(){
 	if (currentIndex === 0) {
 		currentIndex = src.length - 1;
 	} else {
@@ -516,7 +522,7 @@ function pre_song() {
 	subjectname.innerHTML =src[currentIndex] + '재생중'  
 }
 
-function next_song() {
+function next_song(){
 	if (currentIndex === src.length - 1) {
 		currentIndex = 0;
 	} else {
