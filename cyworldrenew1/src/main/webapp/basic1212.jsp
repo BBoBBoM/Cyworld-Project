@@ -24,17 +24,8 @@ String user_hello_word = null;
 String gender = null;
 int user_today_visit = 0;
 int user_total_visit = 0;
-String user_date="";
 
-int countDiary = 0;
-int countPhoto = 0;
-int countMusic = 0;
-int countBoard = 0;
-int countVisitBoard = 0;
 
-String[] tables = {"diary", "music", "photo", "board", "visit_board"};
-String basesql = "select count(*) from "; // 기본 쿼리
-Map<String, Integer> countMap = new HashMap<>();
 try {
 	String sql = "select * from user where user_id=?";
 	String sql1 = "select * from profile where user_id=?";
@@ -53,7 +44,6 @@ try {
 	ResultSet rs1 = pstmt.executeQuery();
 	while (rs1.next()) {
 		user_mini_subject = rs1.getString("user_mini_subject");
-		user_miniroom_file = rs1.getString("user_miniroom_file");
 		user_profile_photo = rs1.getString("user_profile_photo");
 		user_hello_word = rs1.getString("user_hello_word");
 	}
@@ -67,24 +57,6 @@ try {
 
 	}
 
-	for (String table : tables) {
-		String sql3 = basesql + table + " where user_id = ?";
-
-		pstmt = conn.prepareStatement(sql3);
-		pstmt.setString(1, user_id);
-		ResultSet rs3 = pstmt.executeQuery();
-
-		if (rs3.next()) {
-	int count = rs3.getInt(1);
-	countMap.put(table, count);
-		}
-	}
-
-	countDiary = countMap.getOrDefault("diary", 0);
-	countPhoto = countMap.getOrDefault("photo", 0);
-	countMusic = countMap.getOrDefault("music", 0);
-	countBoard = countMap.getOrDefault("board", 0);
-	countVisitBoard = countMap.getOrDefault("visit_board", 0);
 
 } catch (SQLException e) {
 	e.printStackTrace();
@@ -95,18 +67,14 @@ try {
 <head>
 
 <title>Insert title here</title>
-<link href="index.css" rel="stylesheet" type="text/css" />
-<link href = "backgroundEffect/sakura.css"rel="stylesheet" type="text/css" />
+<link href="index1212.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body>
 </head>
 
 <body>
-  <script>
-    // 이전 페이지 새로고침
-    if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
-      location.reload();
-    }
-  </script>
-<script src = "index.js"></script>
 	<div id="mini_container">
 		<div id="mini_background1">
 			<div id="mini_background2">
@@ -135,7 +103,25 @@ try {
 												id="fileinput" name="fileinput" style="display: none;">
 										</form>
 
+										<script>
+											// 파일 선택 창 열기 및 자동 전환
+											function selectFile() {
+												document.getElementById(
+														'fileinput').click();
+											}
 
+											// 파일이 선택되었을 때 자동으로 페이지 전환
+											document
+													.getElementById('fileinput')
+													.addEventListener(
+															'change',
+															function() {
+																document
+																		.getElementById(
+																				'edit_input')
+																		.click();
+															});
+										</script>
 
 
 									</div>
@@ -154,7 +140,25 @@ try {
 												id="fileinput" name="fileinput" style="display: none;">
 										</form>
 
+										<script>
+											// 파일 선택 창 열기 및 자동 전환
+											function selectFile() {
+												document.getElementById(
+														'fileinput').click();
+											}
 
+											// 파일이 선택되었을 때 자동으로 페이지 전환
+											document
+													.getElementById('fileinput')
+													.addEventListener(
+															'change',
+															function() {
+																document
+																		.getElementById(
+																				'edit_input')
+																		.click();
+															});
+										</script>
 									</div>
 									<%
 									} else {
@@ -170,7 +174,26 @@ try {
 												id="fileinput" name="fileinput" style="display: none;">
 										</form>
 
+										<script>
+											// 파일 선택 창 열기 및 자동 전환
+											function selectFile() {
+												document.getElementById(
+														'fileinput').click();
+											}
 
+											// 파일이 선택되었을 때 자동으로 페이지 전환
+											document
+													.getElementById('fileinput')
+													.addEventListener(
+
+															'change',
+															function() {
+																document
+																		.getElementById(
+																				'edit_input')
+																		.click();
+															});
+										</script>
 									</div>
 									<%
 									}
@@ -191,41 +214,51 @@ try {
 											onclick="feeling('슬퍼', 2)" style="display: none;" value="슬퍼">
 									</div>
 
-<script>
-// 파일 선택 창 열기 및 자동 전환
-function selectFile() {
-	document.getElementById(
-		'fileinput').click();
-}
+									<script>
+										function showRadioButton() {
+											let feelings = [ '행복해', '우울해', '슬퍼' ];
+											let radioButtons = document
+													.querySelectorAll('.radiofeel');
+											let feelState = document
+													.getElementById('feel_state');
+											feelState.textContent = ''; // feel_state의 내용을 초기화
 
-// 파일이 선택되었을 때 자동으로 페이지 전환
-document
-	.getElementById('fileinput')
-	.addEventListener(
-		'change',
-		function() {
-			document
-				.getElementById(
-					'edit_input')
-				.click();
-		});
-// 파일 선택 창 열기 및 자동 전환
-function selectFile() {
-	document.getElementById(
-		'fileinput').click();
-}
+											for (var i = 0; i < radioButtons.length; i++) {
+												radioButtons[i].style.display = 'inline';
+												radioButtons[i].nextSibling.textContent = feelings[i]; // 각 라디오 버튼의 텍스트 설정
+											}
 
-// 파일이 선택되었을 때 자동으로 페이지 전환
-document
-	.getElementById('fileinput')
-	.addEventListener(
-		'change',
-		function() {
-			document
-				.getElementById(
-					'edit_input')
-				.click();
-		});</script>
+											document
+													.getElementById('feel_edit_button').style.display = 'none';
+										}
+
+										function feeling(feeling, index) {
+											var feelingText = document
+													.createElement('span');
+											feelingText.textContent = feeling;
+											document.getElementById(
+													'feel_state').appendChild(
+													feelingText);
+
+											var radioButtons = document
+													.querySelectorAll('.radiofeel');
+											for (var i = 0; i < radioButtons.length; i++) {
+												radioButtons[i].style.display = 'none';
+												radioButtons[i].nextSibling.textContent = ''; // 라디오 버튼의 텍스트 제거
+											}
+
+											document
+													.getElementById('feel_edit_button').style.display = 'block';
+
+											let feeling_img_url = [
+													'background/smile.png',
+													'background/gloomy.png',
+													'background/sad.png' ];
+											let feel_img = document
+													.getElementById('feel_img');
+											feel_img.src = feeling_img_url[index];
+										}
+									</script>
 
 
 
@@ -262,7 +295,27 @@ document
 										</form>
 									</div>
 
-								
+									<script>
+										function showTextArea() {
+											document
+													.getElementById('myself_introduce').style.display = 'none';
+											document.getElementById('textarea').style.display = 'block';
+										}
+
+										function saveText() {
+											// 텍스트 저장 처리 및 다음 페이지로 이동
+											// ...
+											document.getElementById('textarea').style.display = 'none';
+											document
+													.getElementById('myself_introduce').style.display = 'block';
+										}
+
+										function cancelEdit() {
+											document.getElementById('textarea').style.display = 'none';
+											document
+													.getElementById('myself_introduce').style.display = 'block';
+										}
+									</script>
 									<hr
 										style="width: 95%; position: absolute; top: 71%; border: 1px solid black;">
 									<div id="user_name_email">
@@ -328,58 +381,34 @@ document
 								</div>
 							</div>
 
+							<script>
+								function showTextArea1() {
+									document
+											.getElementById('user_mini_subject2').style.display = 'none';
+									document.getElementById('subjectarea').style.display = 'block';
+								}
 
+								function saveText1() {
+									// 텍스트 저장 처리 및 다음 페이지로 이동
+									// ...
+									document.getElementById('subjectarea').style.display = 'none';
+									document
+											.getElementById('user_mini_subject2').style.display = 'block';
+								}
+
+								function cancelEdit1() {
+									document.getElementById('subjectarea').style.display = 'none';
+									document
+											.getElementById('user_mini_subject2').style.display = 'block';
+								}
+							</script>
 						</div>
 
 
 						<div id="center_contentsdiv1">
 
 							<div id="center_contents">
-								<div id="center_innerdiv1">
-									<div id="center_newupdate">
-										<div>Update News</div>
-										<br>
 
-
-									</div>
-									<div id="center_contents_atag">
-										<table>
-											<tr>
-												<td><a href="diary.jsp">다이어리<span
-														class="count_span"><%=countDiary%></span></a></td>
-												<td><a href="jukebox.jsp">주크박스<span
-														class="count_span"><%=countMusic%></span></a></td>
-											</tr>
-											<tr>
-												<td><a href="photo.jsp">사진첩<span class="count_span"><%=countPhoto%></span></a></td>
-												<td><a href="index.jsp">게시판<span class="count_span"><%=countBoard%></span></a></td>
-											</tr>
-											<tr>
-
-												<td><a href="visit_board.jsp">방명록<span
-														class="count_span"><%=countVisitBoard%></span></a></td>
-											</tr>
-										</table>
-									</div>
-								</div>
-
-								<div id="center_miniroom" style="position: relative">
-
-									<img alt=""
-										src="userprofileimg/
-									<%if (user_miniroom_file == null || user_miniroom_file.equals("")) {%>		miniroom1.png"
-										<%} else {%> <%=user_miniroom_file%> <%} ;%>
-										style="width: 100%; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
-
-									<div id="miniroom_img_edit">
-										<form action="index.jsp">
-											<button>Edit</button>
-										</form>
-									</div>
-
-								</div>
-								<div id="center_comment">DB에 평가란 만들어서 날짜 별로 가장 상위 3개만 뿌리는? 본인은 작성하지 못하고 타인이 본인의 홈피에 방문했을때 남기기 버튼 생기게?
-								</div>
 							</div>
 						</div>
 					</div>
@@ -429,7 +458,11 @@ document
 										href="index.jsp">설정</a>
 								</div>
 
-
+								<script>
+									function goToPage(url) {
+										window.location.href = url;
+									}
+								</script>
 
 							</div>
 						</div>
@@ -437,20 +470,10 @@ document
 					<div id="dotori_div">
 					<div id="current_dotori">보유도토리</div>
 					<div><a href="index.jsp"></a> 도토리 장터</div></div>
-					
 				</div>
-			
 			</div>
 		</div>
-	</div>
-	
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>
-$(window).load(function () {
-    $('body').sakura();
-});
-</script>
 
-<script src="backgroundEffect/sakura.js"></script>
+	</div>
 </body>
 </html>

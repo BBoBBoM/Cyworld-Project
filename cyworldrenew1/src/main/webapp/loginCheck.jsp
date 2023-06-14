@@ -24,7 +24,7 @@
 		session.setAttribute("sessionId", id);
 	%>
 
-	<c:redirect url="resultaddmember.jsp?msg=2" />
+	<c:redirect url="loginuser.jsp" />
 </c:forEach>
 
 <c:redirect url="loginerror.jsp?error=1" />

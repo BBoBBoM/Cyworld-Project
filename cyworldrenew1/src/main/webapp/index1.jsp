@@ -95,8 +95,23 @@ try {
 <head>
 
 <title>Insert title here</title>
-<link href="index.css" rel="stylesheet" type="text/css" />
-<link href = "backgroundEffect/sakura.css"rel="stylesheet" type="text/css" />
+<link href="index1.css" rel="stylesheet" type="text/css" />
+<style>#mini_background1 {
+	width: 100%;
+	height: 100%;
+	background: url(outer/bg3.gif) no-repeat center;
+	background-size: cover;
+	position: absolute;border:5px;solid;    background-size: 100% 100%;}
+	
+#mini_background2 {
+	width: 95%;
+	height: 95%;
+	margin-top: 25px;
+	<!--background: url(outer/bg1.gif) no-repeat center;-->
+background-color : gray;
+	background-size: cover;
+	background-size: 100% 100%;
+}</style>
 </head>
 
 <body>
@@ -437,20 +452,10 @@ document
 					<div id="dotori_div">
 					<div id="current_dotori">보유도토리</div>
 					<div><a href="index.jsp"></a> 도토리 장터</div></div>
-					
 				</div>
-			
 			</div>
 		</div>
-	</div>
-	
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>
-$(window).load(function () {
-    $('body').sakura();
-});
-</script>
 
-<script src="backgroundEffect/sakura.js"></script>
+	</div>
 </body>
 </html>

@@ -25,7 +25,6 @@ String gender = null;
 int user_today_visit = 0;
 int user_total_visit = 0;
 
-
 String music_subject1 = "";
 String music_artist1 = "";
 List<String> music_subject = new ArrayList<>();
@@ -60,7 +59,6 @@ try {
 		user_today_visit = rs2.getInt("user_today_visit");
 		user_total_visit = rs2.getInt("user_total_visit");
 
-
 	}
 	String sql3 = "select * from music where user_id=?";
 	pstmt = conn.prepareStatement(sql3);
@@ -73,7 +71,6 @@ try {
 		music_artist.add(music_artist1);
 
 	}
-	
 
 } catch (SQLException e) {
 	e.printStackTrace();
@@ -92,7 +89,7 @@ try {
 </head>
 
 <body>
- <script>
+	<script>
     // 이전 페이지 새로고침
     if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
       location.reload();
@@ -366,7 +363,8 @@ try {
 
 
 					</div>
-<div id="left_right_borderdiv" style="position:absolute;width:1%;height:78%;border-left:1px solid black;top:13%;left:30.5%"></div>
+					<div id="left_right_borderdiv"
+						style="position: absolute; width: 1%; height: 78%; border-left: 1px solid black; top: 13%; left: 30.5%"></div>
 					<div id="center_contentsdiv">
 						<div id="center_subject">
 							<div id="user_mini_subject">
@@ -432,21 +430,29 @@ try {
 
 							<div id="center_contents">
 
-								<div style="font-size: 25px;"><%=user_name %>님의 주크박스</div>
-								<div style="height: 300px;font-size: 17px;">
-								<br>
-									보유중인 노래
-									<br>
-									<br>
-									
-									<div style="border:1px solid black;padding:10px;background:white;	word-wrap: break-word;
-	overflow-y: scroll; ">
+								<div style="font-size: 25px;"><%=user_name%>님의 주크박스
+								</div>
+								<div style="height: 300px; font-size: 17px;">
+									<br> 보유중인 노래 <br> <br>
+
+									<div
+										style="border: 1px solid black; padding: 10px; background: white; word-wrap: break-word; overflow-y: scroll;">
 										<%
 										for (int i = 0; i < music_subject.size(); i++) {
 										%>
 
-										<label class="music-item" style = "text-decoration: underline;"><a href="#"
-											onclick="playaudio('music/<%=music_subject.get(i)%>.mp3')"><%=music_artist.get(i)%>-<%=music_subject.get(i)%></a></label><br><br>
+										<label class="music-item" style="text-decoration: underline;"><a
+											href="#"
+											onclick="playaudio('music/<%=music_subject.get(i)%>.mp3',<%=i%>)"><%=music_artist.get(i)%>-<%=music_subject.get(i)%></a>
+											
+											
+											
+											</label>
+											<div id="image<%=i%>" style="width:5%;height:8%; float:left;display:none;"><img style="width:100%;height:100%;background-position: center;background-repeat: no-repeat;background-size: cover; " alt="" src="background/note.webp"></div>
+											
+											
+											<br>
+										<br>
 
 
 
@@ -465,8 +471,9 @@ try {
 
 					<div id="right_contentsdiv_border">
 						<div id="right_contentsdiv">
-														<div id="right_music">
-								<audio id="audioPlayer" controls style="width:100%">
+							<div id="right_music">
+								<audio id="audioPlayer" controls autoplay="autoplay"
+									style="width: 100%">
 									<source id="audioSource" src="" type="audio/mpeg">
 								</audio>
 								<button onclick="play()">play</button>
@@ -491,12 +498,20 @@ let audioPlayer = document.getElementById('audioPlayer');
 let audioSource = document.getElementById('audioSource');
 let subjectname = document.getElementById('subjectname');
 
-function playaudio(name){
+function playaudio(name, index){
 	audioPlayer.pause();
 	audioSource.src = name;
 	audioPlayer.load();
 	audioPlayer.play();
-	subjectname.innerHTML =name.replace('music/', '') + ' 재생중';   
+	subjectname.innerHTML =name.replace('music/', '') + ' 재생중';
+	
+	
+	  let images = document.querySelectorAll('[id^=image]');
+	  //[^ id 속성 값이 "image"로 시작하는 모든 요소를 선택하는 역할 ^는 "시작하는"을 의미]
+	  for (let i = 0; i < images.length; i++) {
+	    images[i].style.display = 'none';
+	  }
+	document.getElementById('image' + index).style.display = 'block';
 }
 
 function play(){
@@ -536,7 +551,7 @@ function next_song(){
 
 
 </script>
-							
+
 							<div id="right_menu">
 								<div onclick="goToPage('index.jsp')">
 									<input type="radio" id="home" class="radioG" name="radio1"
@@ -589,8 +604,11 @@ function next_song(){
 						</div>
 					</div>
 					<div id="dotori_div">
-					<div id="current_dotori">보유도토리</div>
-					<div><a href="index.jsp"></a> 도토리 장터</div></div>
+						<div id="current_dotori">보유도토리</div>
+						<div>
+							<a href="index.jsp"></a> 도토리 장터
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

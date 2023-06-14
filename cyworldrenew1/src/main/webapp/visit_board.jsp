@@ -24,13 +24,18 @@ String user_hello_word = null;
 String gender = null;
 int user_today_visit = 0;
 int user_total_visit = 0;
-String user_date="";
+String user_date = "";
 
 int countDiary = 0;
 int countPhoto = 0;
 int countMusic = 0;
 int countBoard = 0;
 int countVisitBoard = 0;
+
+List<String> ilchon_id = new ArrayList<>();
+List<String> visit_contents = new ArrayList<>();
+List<String> visit_date = new ArrayList<>();
+List<String> ilchon_name = new ArrayList<>();
 
 String[] tables = {"diary", "music", "photo", "board", "visit_board"};
 String basesql = "select count(*) from "; // 기본 쿼리
@@ -39,6 +44,7 @@ try {
 	String sql = "select * from user where user_id=?";
 	String sql1 = "select * from profile where user_id=?";
 	String sql2 = "select * from user_visitrate where user_id=?";
+	String sql4 = "select * from visit_board where user_id=? order by visit_date DESC;";
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, user_id);
 	ResultSet rs = pstmt.executeQuery();
@@ -64,7 +70,6 @@ try {
 		user_today_visit = rs2.getInt("user_today_visit");
 		user_total_visit = rs2.getInt("user_total_visit");
 
-
 	}
 
 	for (String table : tables) {
@@ -86,6 +91,28 @@ try {
 	countBoard = countMap.getOrDefault("board", 0);
 	countVisitBoard = countMap.getOrDefault("visit_board", 0);
 
+	pstmt = conn.prepareStatement(sql4);
+	pstmt.setString(1, user_id);
+	ResultSet rs4 = pstmt.executeQuery();
+	while (rs4.next()) {
+		String ilchon_id1 = rs4.getString("ilchon_id");
+		String visit_contents1 = rs4.getString("visit_contents");
+		String visit_date1 = rs4.getString("visit_date");
+
+		ilchon_id.add(ilchon_id1);
+		visit_contents.add(visit_contents1);
+		visit_date.add(visit_date1);
+
+	}
+	for (String id : ilchon_id) {
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, id);
+		ResultSet rs5 = pstmt.executeQuery();
+		while (rs5.next()) {
+	String ilchon_name1 = rs5.getString("user_name");
+	ilchon_name.add(ilchon_name1);
+		}
+	}
 } catch (SQLException e) {
 	e.printStackTrace();
 }
@@ -95,7 +122,7 @@ try {
 <head>
 
 <title>Insert title here</title>
-<link href="visit_board.css" rel="stylesheet" type="text/css" />
+<link href="visit_board1.css" rel="stylesheet" type="text/css" />
 
 
 </head>
@@ -103,12 +130,13 @@ try {
 </head>
 
 <body>
-  <script>
-    // 이전 페이지 새로고침
-    if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
-      location.reload();
-    }
-  </script>
+	<script>
+		// 이전 페이지 새로고침
+		if (window.performance
+				&& window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
+			location.reload();
+		}
+	</script>
 	<div id="mini_container">
 		<div id="mini_background1">
 			<div id="mini_background2">
@@ -377,7 +405,8 @@ try {
 
 
 					</div>
-<div id="left_right_borderdiv" style="position:absolute;width:1%;height:78%;border-left:1px solid black;top:13%;left:30.5%"></div>
+					<div id="left_right_borderdiv"
+						style="position: absolute; width: 1%; height: 78%; border-left: 1px solid black; top: 13%; left: 30.5%"></div>
 					<div id="center_contentsdiv">
 						<div id="center_subject">
 							<div id="user_mini_subject">
@@ -469,10 +498,26 @@ try {
 										</table>
 									</div>
 								</div>
-								
+
 								<div id="visit_contents">
-								<% %>
-								
+									<%
+									for (int i = 0; i < visit_date.size(); i++) {
+									%>
+
+									<div id="visit_contents_innerdiv">
+										<div id="visit_info_div">
+											<%= ilchon_name.get(i)%>&nbsp;&nbsp; <%= ilchon_id.get(i)%>&nbsp;&nbsp; <%= visit_date.get(i)%>
+										</div>
+										<div id="visit_contents_div">
+										<%= visit_contents.get(i)%></div>
+									</div>
+
+<br><br><br>
+
+									<%
+									}
+									%>
+
 								</div>
 							</div>
 						</div>
@@ -532,9 +577,12 @@ try {
 							</div>
 						</div>
 					</div>
-<div id="dotori_div">
-					<div id="current_dotori">보유도토리</div>
-					<div><a href="index.jsp"></a> 도토리 장터</div></div>
+					<div id="dotori_div">
+						<div id="current_dotori">보유도토리</div>
+						<div>
+							<a href="index.jsp"></a> 도토리 장터
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

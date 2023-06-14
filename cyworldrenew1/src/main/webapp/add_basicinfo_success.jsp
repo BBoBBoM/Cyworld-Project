@@ -12,7 +12,7 @@
     <script type="text/javascript">
  
 			alert("기본정보 설정을 저장했습니다 미니홈페이지 메인화면으로 넘어갑니다.");
-			window.location.href = "index.html";
+			window.location.href = "loginuser.jsp";
 		
 	</script>
 </body>

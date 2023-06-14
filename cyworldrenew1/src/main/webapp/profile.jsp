@@ -67,6 +67,7 @@ try {
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="profile1.css" rel="stylesheet" type="text/css" />
+
 </head>
 
 
@@ -191,7 +192,7 @@ document
 
 <div id="profile_introduce_border1" style="position:relative;">
     <button onclick="showTextArea()">수정하기</button>
-    <div id="fileContent">
+    <div id="fileContent" style="width:90%;height:80%;">
         <%=user_introduce_text %>
     </div>
 </div>
@@ -199,10 +200,13 @@ document
     <form action="saveText.jsp" method="post">
         <button type="submit" onclick="saveText();">저장</button>
         <button type="reset" onclick="cancelEdit();">취소</button>
-        <textarea id="filecontent_textarea" name="filecontent_textarea"></textarea>
+        <textarea id="filecontent_textarea" name="filecontent_textarea"style="width:90%;height:80%;"></textarea>
     </form>
 </div>
-
+<script>function saveText(){
+	document.getElementById('profile_introduce_border1').style.display='block';
+	document.getElementById('profile_introduce_border2').style.display='none';
+}</script>
 							</div></div>
 						</div>
 					</div>
