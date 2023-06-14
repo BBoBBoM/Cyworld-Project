@@ -42,7 +42,7 @@ CREATE TABLE `profile` (
 
 LOCK TABLES `profile` WRITE;
 /*!40000 ALTER TABLE `profile` DISABLE KEYS */;
-INSERT INTO `profile` VALUES (4,'3321','미니룸3.png','miniroomback12.gif',NULL,'초보개발자의 미니홈피','ffdsfsfdsfdsf',NULL,'<br>이름 : ddfdf<br><br>나이 :dfdf<br><br>전화번호 : dfdf<br><br>성별 : dfdf<br><br>주소 : dfdf<br><br><br>    '),(5,'123',NULL,NULL,NULL,NULL,NULL,NULL,'<br>이름 : <br><br>나이 :<br><br>전화번호 : <br><br>성별 : <br><br>주소 : <br><br>');
+INSERT INTO `profile` VALUES (4,'3321','acorn.png','miniroomback12.gif',NULL,'vgdfgdfg','jghfjghjghj',NULL,'이름 : cxvxvcxv<br><br>나이 :cxcxvcx<br><br>전화번호 : dsfdsf<br><br>성별 : dsff<br><br>주소 : dsfsf<br><br><br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    '),(5,'123',NULL,NULL,NULL,'dd',NULL,NULL,'<br>이름 : <br><br>나이 :<br><br>전화번호 : <br><br>성별 : <br><br>주소 : <br><br>');
 /*!40000 ALTER TABLE `profile` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-12  9:07:44
+-- Dump completed on 2023-06-14 17:27:18

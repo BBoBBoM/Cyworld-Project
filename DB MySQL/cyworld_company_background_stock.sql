@@ -16,30 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `visit_board`
+-- Table structure for table `company_background_stock`
 --
 
-DROP TABLE IF EXISTS `visit_board`;
+DROP TABLE IF EXISTS `company_background_stock`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `visit_board` (
+CREATE TABLE `company_background_stock` (
   `number` int NOT NULL AUTO_INCREMENT,
-  `user_id` varchar(45) NOT NULL,
-  `ilchon_id` varchar(45) NOT NULL,
-  `visit_contents` varchar(500) NOT NULL,
-  `visit_date` varchar(45) NOT NULL,
+  `background_file_name` varchar(45) NOT NULL,
+  `background_price` int NOT NULL,
+  `background_contents` varchar(45) NOT NULL,
   PRIMARY KEY (`number`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `visit_board`
+-- Dumping data for table `company_background_stock`
 --
 
-LOCK TABLES `visit_board` WRITE;
-/*!40000 ALTER TABLE `visit_board` DISABLE KEYS */;
-INSERT INTO `visit_board` VALUES (3,'3321','123','개발의 세계에 오신것을 환영합니다','2019-04-01'),(4,'3321','123','항상 응원하고 있어요','2018-04-01'),(5,'3321','123','잘하고 계신가요?','2020-04-01'),(6,'3321','123','게시판은 언제 보여주실건가요','2023-06-13');
-/*!40000 ALTER TABLE `visit_board` ENABLE KEYS */;
+LOCK TABLES `company_background_stock` WRITE;
+/*!40000 ALTER TABLE `company_background_stock` DISABLE KEYS */;
+INSERT INTO `company_background_stock` VALUES (1,'bg1.gif',10,'꽃창'),(2,'bg2.gif',10,'꽃밭'),(3,'bg3.gif',10,'녹화'),(4,'bg4.gif',10,'꽃테두리'),(5,'bg5.gif',10,'생일축하해');
+/*!40000 ALTER TABLE `company_background_stock` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

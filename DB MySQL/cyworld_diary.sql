@@ -28,7 +28,7 @@ CREATE TABLE `diary` (
   `diary_content` varchar(1000) NOT NULL,
   `diary_date` varchar(45) NOT NULL,
   PRIMARY KEY (`diary_number`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `diary` (
 
 LOCK TABLES `diary` WRITE;
 /*!40000 ALTER TABLE `diary` DISABLE KEYS */;
-INSERT INTO `diary` VALUES (4,'3321','								\r\n		ㅇㅇㄹㅇㄴㄹㄹㅇㄹㅇㄹ	ㅇㄹㅇㄹㅇㄹㅇㄹ					','2023-03-04'),(5,'3321','								\r\n						ㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄴ		','2021-04-03'),(6,'3321','								\r\n				ㄴㅇㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄴ				','2023-11-18'),(7,'3321','								\r\n		ㅇㄹㅇㄹㅇ						','2023-07-08'),(8,'3321','								\r\n								','2023-01-01'),(9,'3321','								\r\n								','2023-01-01'),(10,'3321','								\r\n								','2023-01-01'),(11,'3321','ㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹ								\r\n								','2023-01-01');
+INSERT INTO `diary` VALUES (4,'3321','								\r\n		ㅇㅇㄹㅇㄴㄹㄹㅇㄹㅇㄹ	ㅇㄹㅇㄹㅇㄹㅇㄹ					','2023-03-04'),(5,'3321','								\r\n						ㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄴ		','2021-04-03'),(6,'3321','								\r\n				ㄴㅇㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄴ				','2023-11-18'),(7,'3321','								\r\n		ㅇㄹㅇㄹㅇ						','2023-07-08'),(8,'3321','								\r\n								','2023-01-01'),(9,'3321','								\r\n								','2023-01-01'),(10,'3321','								\r\n								','2023-01-01'),(11,'3321','ㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹㅇㄴㄹ								\r\n								','2023-01-01'),(12,'3321','								\r\n			fdfdsfdsfdsfds					','2021-04-05'),(13,'3321','		fdfsffs	','2023-04-05'),(14,'3321','								\r\n				kjhlkjlkjlkljl				','2023-01-01'),(15,'3321','rwrferwerwerwer			','2023-01-05'),(16,'3321','1월7일 입니다		','2023-01-07'),(17,'3321','			ㄹㅇㄴㄹㅇㄴㄹ					\r\n								','2023-04-01'),(18,'3321','								\r\n						호ㅓ쇼ㅕ쇼ㅕ		','2023-06-09'),(19,'3321','3월2일								\r\n								','2023-03-02'),(20,'3321','								\r\n		2022년 10월 9일						','2022-10-09'),(21,'3321','								\r\n			dfgvdsfgdsfdsfdsf		qwewqe			','2023-06-13');
 /*!40000 ALTER TABLE `diary` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-12  9:07:44
+-- Dump completed on 2023-06-14 17:27:20

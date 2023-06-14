@@ -29,7 +29,7 @@ CREATE TABLE `music` (
   `music_artist` varchar(45) NOT NULL,
   `music_running_time` int DEFAULT NULL,
   PRIMARY KEY (`number`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `music` (
 
 LOCK TABLES `music` WRITE;
 /*!40000 ALTER TABLE `music` DISABLE KEYS */;
-INSERT INTO `music` VALUES (1,'3321','꿈에','박정현',NULL),(2,'3321','인형의꿈','러브홀릭',NULL),(3,'3321','야생화','박효신',NULL),(4,'3321','그런가봐요','브이원',NULL),(5,'3321','endlesslove','머리이어캐리',NULL),(6,'3321','거짓말','T-ara',NULL),(7,'3321','달빛소년','채리필터',NULL),(8,'3321','가만히눈을감고','정재욱',NULL),(9,'3321','A Lover\' Concerto','Okulele Picnic',NULL);
+INSERT INTO `music` VALUES (1,'3321','꿈에','박정현',NULL),(2,'3321','인형의꿈','러브홀릭',NULL),(3,'3321','야생화','박효신',NULL),(4,'3321','그런가봐요','브이원',NULL),(5,'3321','endlesslove','머리이어캐리',NULL),(6,'3321','거짓말','T-ara',NULL),(7,'3321','달빛소년','채리필터',NULL),(8,'3321','가만히눈을감고','정재욱',NULL),(10,'3321','a lovers concerto','SarahVaughan',NULL);
 /*!40000 ALTER TABLE `music` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-12  9:07:44
+-- Dump completed on 2023-06-14 17:27:19

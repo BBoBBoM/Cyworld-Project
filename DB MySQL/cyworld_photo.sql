@@ -29,7 +29,7 @@ CREATE TABLE `photo` (
   `photo_contents` varchar(45) DEFAULT NULL,
   `photo_date` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`photo_number`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `photo` (
 
 LOCK TABLES `photo` WRITE;
 /*!40000 ALTER TABLE `photo` DISABLE KEYS */;
-INSERT INTO `photo` VALUES (3,'3321','3.jpg','숲','2013-12-13'),(4,'3321','5.jpg','호수','2016-11-30');
+INSERT INTO `photo` VALUES (3,'3321','3.jpg','숲','2013-12-13'),(4,'3321','5.jpg','호수','2016-11-30'),(7,'3321','rain-3582_256.gif','비온다','2023-06-12'),(8,'3321','image91.png','강아지','2023-06-13'),(9,'3321','coffee.jpg','fgfg','2023-06-13');
 /*!40000 ALTER TABLE `photo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-12  9:07:44
+-- Dump completed on 2023-06-14 17:27:19
