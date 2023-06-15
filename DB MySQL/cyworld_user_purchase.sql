@@ -25,13 +25,14 @@ DROP TABLE IF EXISTS `user_purchase`;
 CREATE TABLE `user_purchase` (
   `number` int NOT NULL AUTO_INCREMENT,
   `user_id` varchar(45) NOT NULL,
-  `stock_background_file` varchar(45) NOT NULL,
-  `stock_price` int NOT NULL,
-  `stock_buy_date` date NOT NULL,
+  `stock_background_file` varchar(45) DEFAULT NULL,
+  `stock_background_price` int DEFAULT NULL,
+  `stock_background_contents` varchar(45) DEFAULT NULL,
+  `stock_background_buy_date` varchar(45) DEFAULT NULL,
   `background_effect_css` varchar(45) DEFAULT NULL,
   `background_effect_js` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`number`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,6 +41,7 @@ CREATE TABLE `user_purchase` (
 
 LOCK TABLES `user_purchase` WRITE;
 /*!40000 ALTER TABLE `user_purchase` DISABLE KEYS */;
+INSERT INTO `user_purchase` VALUES (3,'3321','outer/bg2.gif',10,'꽃밭','2023-06-15',NULL,NULL),(4,'3321','outer/bg1.gif',10,'꽃창','2023-06-15',NULL,NULL);
 /*!40000 ALTER TABLE `user_purchase` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-14 17:27:20
+-- Dump completed on 2023-06-15 17:20:27

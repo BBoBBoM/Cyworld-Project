@@ -44,7 +44,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('123','123','123','123@naver.com','1234/02/1','남','12345678910','','https://cyworld.com/123','2023-06-09',500),('3321','213','슈퍼맨','tkrhkakt1@gmail.com','1999/10/30','남','010-4525-3438','대구 북구','https://cyworld.com/3321','2023-05-30',500);
+INSERT INTO `user` VALUES ('123','123','123','123@naver.com','1234/02/1','남','12345678910','','https://cyworld.com/123','2023-06-09',500),('3321','213','슈퍼맨','tkrhkakt1@gmail.com','1999/10/30','남','010-4525-3438','대구 북구','https://cyworld.com/3321','2023-05-30',480);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-14 17:27:19
+-- Dump completed on 2023-06-15 17:20:26
