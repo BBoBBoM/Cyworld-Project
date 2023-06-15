@@ -279,18 +279,26 @@ top:45%;right:8%;background-color:white;}
     height: 100%;
 }
 
- #stock_jangbaguni_div{
+
+	   #stock_div{
 		   width:55%;height:50%;position: absolute;border:2px solid purple;top:45%;left:5%;word-wrap: break-word;overflow-y : auto; 
-		   border:1px solid purple;}
-#stock_div::-webkit-scrollbar {
+		   }
+		   #stock_div::-webkit-scrollbar {
         display: none;}
-        #stock_all>div{display: inline-flex;}
+        
+        #stock_div_inner{display: inline-flex; width: 40%; height: 50%; float: left; margin: 5%; background-color: white;border-radius: 10px;}
+        #stock_div_img{width: 50%; height: 100%;}
+         #stock_div_img>img{width: 100%; height: 100%; background-repeat: no-repeat; background-size: cover; background-position: center;}
+        #stock_div_contents{width: 50%; height: 100%;padding:10px;}
+        
+        #stock_div_contents>div{width:100%;height:33%;}
         
         
         
-        #stock_all{width: 100%; height: 20%; border: 1px solid; padding: 10px;}
-        #stock_all>div{float:left}
-        #stock_img{width: 12%; height: 100%; border: 1px solid;margin-top:10px;}
-        #stock_img>img{width:100%;height:100%;}
-        #stock_contents{width: 50%; height: 100%; border: 1px solid;}
-        #calculate_div{width:100%;text-align: center;border:1px solid}
+        
+        
+        
+        
+        
+        
+        

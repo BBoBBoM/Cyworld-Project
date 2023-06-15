@@ -102,7 +102,7 @@ alert("<%=user_id%>님 환영합니다");
 						<span>Menu3</span>
 					</ul>
 					<ul>
-						<span>Menu4</span>
+						<span><a href="having_effect.jsp">보유효과</a></span>
 					</ul>
 				</nav>
 				<div id="menulistdiv">
