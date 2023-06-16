@@ -34,6 +34,7 @@ CREATE TABLE `user` (
   `cyworld_url` varchar(45) DEFAULT NULL,
   `joindate` date DEFAULT NULL,
   `dotori` int DEFAULT NULL,
+  `user_background` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -44,7 +45,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('123','123','123','123@naver.com','1234/02/1','남','12345678910','','https://cyworld.com/123','2023-06-09',500),('3321','213','슈퍼맨','tkrhkakt1@gmail.com','1999/10/30','남','010-4525-3438','대구 북구','https://cyworld.com/3321','2023-05-30',480);
+INSERT INTO `user` VALUES ('123','123','123','123@naver.com','1234/02/1','남','12345678910','','https://cyworld.com/123','2023-06-09',500,NULL),('1234','1234','슈퍼맨','bows1230@daum.net','1230/10/30','남','00000000000','대구 동구 백안','https://cyworld.com/1234','2023-06-16',500,'outer/backgroundouter.png'),('123455','1234','슈퍼맨','bows1230@daum.net','1230/10/30','남','00000000000','대구 동구 백안','https://cyworld.com/123455','2023-06-16',500,'outer/backgroundouter.png'),('3321','213','슈퍼맨','tkrhkakt1@gmail.com','1999/10/30','남','010-4525-3438','대구 북구','https://cyworld.com/3321','2023-05-30',460,'outer/bg3.gif');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-15 17:20:26
+-- Dump completed on 2023-06-16 17:17:30

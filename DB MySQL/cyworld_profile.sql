@@ -33,7 +33,7 @@ CREATE TABLE `profile` (
   `user_miniroom_file` varchar(45) DEFAULT NULL,
   `user_introduce_text` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`profile_number`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `profile` (
 
 LOCK TABLES `profile` WRITE;
 /*!40000 ALTER TABLE `profile` DISABLE KEYS */;
-INSERT INTO `profile` VALUES (4,'3321','acorn.png','miniroomback12.gif',NULL,'vgdfgdfg','jghfjghjghj',NULL,'이름 : cxvxvcxv<br><br>나이 :cxcxvcx<br><br>전화번호 : dsfdsf<br><br>성별 : dsff<br><br>주소 : dsfsf<br><br><br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    '),(5,'123',NULL,NULL,NULL,'dd',NULL,NULL,'<br>이름 : <br><br>나이 :<br><br>전화번호 : <br><br>성별 : <br><br>주소 : <br><br>');
+INSERT INTO `profile` VALUES (4,'3321','acorn.png','miniroomback12.gif',NULL,'vgdfgdfg','jghfjghjghj',NULL,'이름 : cxvxvcxv<br><br>나이 :cxcxvcx<br><br>전화번호 : dsfdsf<br><br>성별 : dsff<br><br>주소 : dsfsf<br><br><br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    '),(5,'123',NULL,NULL,NULL,'dd',NULL,NULL,'<br>이름 : <br><br>나이 :<br><br>전화번호 : <br><br>성별 : <br><br>주소 : <br><br>'),(6,'1234',NULL,NULL,NULL,NULL,NULL,NULL,'<br>이름 : <br><br>나이 :<br><br>전화번호 : <br><br>성별 : <br><br>주소 : <br><br>'),(7,'123455',NULL,NULL,NULL,NULL,NULL,NULL,'<br>이름 : <br><br>나이 :<br><br>전화번호 : <br><br>성별 : <br><br>주소 : <br><br>');
 /*!40000 ALTER TABLE `profile` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-15 17:20:25
+-- Dump completed on 2023-06-16 17:17:29

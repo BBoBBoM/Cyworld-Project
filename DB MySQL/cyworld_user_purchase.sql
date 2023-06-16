@@ -29,10 +29,8 @@ CREATE TABLE `user_purchase` (
   `stock_background_price` int DEFAULT NULL,
   `stock_background_contents` varchar(45) DEFAULT NULL,
   `stock_background_buy_date` varchar(45) DEFAULT NULL,
-  `background_effect_css` varchar(45) DEFAULT NULL,
-  `background_effect_js` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`number`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +39,7 @@ CREATE TABLE `user_purchase` (
 
 LOCK TABLES `user_purchase` WRITE;
 /*!40000 ALTER TABLE `user_purchase` DISABLE KEYS */;
-INSERT INTO `user_purchase` VALUES (3,'3321','outer/bg2.gif',10,'꽃밭','2023-06-15',NULL,NULL),(4,'3321','outer/bg1.gif',10,'꽃창','2023-06-15',NULL,NULL);
+INSERT INTO `user_purchase` VALUES (3,'3321','outer/bg2.gif',10,'꽃밭','2023-06-15'),(4,'3321','outer/bg1.gif',10,'꽃창','2023-06-15'),(6,'3321','outer/backgroundouter.png',0,'기본이미지','2023-06-16'),(7,'3321','outer/bg3.gif',10,'녹화','2023-06-16');
 /*!40000 ALTER TABLE `user_purchase` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-15 17:20:27
+-- Dump completed on 2023-06-16 17:17:29
