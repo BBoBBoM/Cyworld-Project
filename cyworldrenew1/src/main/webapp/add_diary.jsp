@@ -36,7 +36,7 @@ int number = 0;
 		%>
 	<script type="text/javascript">
 
-		rs.close();
+	
 		alert("<%=date%>일기가 등록되었습니다");
 		history.go(-1);
 		

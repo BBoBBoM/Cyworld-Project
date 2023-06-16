@@ -774,5 +774,4 @@ document.getElementById('write_diary').style.display = 'block';
 </script>
 	</div>
 </body>
-
 </html>

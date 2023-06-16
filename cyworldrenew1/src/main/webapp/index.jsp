@@ -96,7 +96,7 @@ try {
 
 <title>Insert title here</title>
 <link href="index.css" rel="stylesheet" type="text/css" />
-<link href = "backgroundEffect/sakura.css"rel="stylesheet" type="text/css" />
+
 </head>
 
 <body>
@@ -437,20 +437,10 @@ document
 					<div id="dotori_div">
 					<div id="current_dotori">보유도토리</div>
 					<div><a href="index.jsp"></a> 도토리 장터</div></div>
-					
 				</div>
-			
 			</div>
 		</div>
-	</div>
-	
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>
-$(window).load(function () {
-    $('body').sakura();
-});
-</script>
 
-<script src="backgroundEffect/sakura.js"></script>
+	</div>
 </body>
 </html>

@@ -67,7 +67,6 @@ try {
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="profile1.css" rel="stylesheet" type="text/css" />
-
 </head>
 
 
