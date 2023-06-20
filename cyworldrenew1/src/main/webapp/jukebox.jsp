@@ -24,7 +24,7 @@ String user_hello_word = null;
 String gender = null;
 int user_today_visit = 0;
 int user_total_visit = 0;
-
+String user_background = "";
 String music_subject1 = "";
 String music_artist1 = "";
 List<String> music_subject = new ArrayList<>();
@@ -42,6 +42,7 @@ try {
 		user_name = rs.getString("user_name");
 		email = rs.getString("email");
 		gender = rs.getString("gender");
+		user_background = rs.getString("user_background");
 	}
 	pstmt = conn.prepareStatement(sql1);
 	pstmt.setString(1, user_id); // user_id 값을 설정해야 합니다.
@@ -82,10 +83,8 @@ try {
 
 <title>Insert title here</title>
 <link href="jukebox.css" rel="stylesheet" type="text/css" />
+<link href = "backgroundEffect/sakura.css"rel="stylesheet" type="text/css" />
 
-
-</head>
-<body>
 </head>
 
 <body>
@@ -96,7 +95,11 @@ try {
     }
   </script>
 	<div id="mini_container">
-		<div id="mini_background1">
+		<div id="mini_background1" style="width: 100%;
+	height: 100%;
+	background: url(<%=user_background%>) no-repeat center;
+	background-size: 100% 100%;
+	position: absolute;">
 			<div id="mini_background2">
 				<div id="all_contentsdiv">
 					<div id="left_contentsborderdiv">
@@ -605,6 +608,7 @@ function next_song(){
 					</div>
 					<div id="dotori_div">
 						<div id="current_dotori">보유도토리</div>
+						<div id = "having_effect"><a href ="having_effect.jsp">배경화면 바꾸기</a></div>
 						<div>
 							<a href="index.jsp"></a> 도토리 장터
 						</div>
@@ -614,5 +618,14 @@ function next_song(){
 		</div>
 
 	</div>
+	
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+$(window).load(function () {
+    $('body').sakura();
+});
+</script>
+
+<script src="backgroundEffect/sakura.js"></script>
 </body>
 </html>

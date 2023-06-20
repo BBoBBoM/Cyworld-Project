@@ -13,7 +13,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="cart.css" rel="stylesheet" type="text/css" />
+<link href="cart1.css" rel="stylesheet" type="text/css" />
 
 
 </head>
@@ -207,9 +207,9 @@
 					<img src="<%=session_file_name.get(i)%>">
 				</div>
 				<div id="stock_contents"
-					><%=session_price.get(i)%>
-					<%=session_contents.get(i)%></div>
-				<div>
+					>가격 : <%=session_price.get(i)%> 도토리 // 
+					이름 : <%=session_contents.get(i)%></div>
+				<div id="total_stock_contents">
 					수량: <input type="number" name="quantity_<%=i%>" value="1">
 				</div>
 				<div id="stock_cancel">
@@ -239,9 +239,9 @@
 					} else {
 					%>
 
-					상품명 : <%=session_contents.get(i)%>
+					상품명 : <%=session_contents.get(i)%> 
 					&nbsp;&nbsp;
-					가격 : <%=session_price.get(i)%>
+					가격 : <%=session_price.get(i)%> 도토리
 					&nbsp; 
 					<%
 					}
@@ -256,7 +256,7 @@
 
 
 				//   	총가격 =
-					<%=stock_count%>
+					<%=stock_count%> 도토리
 					<input type="hidden" name="all_price" value="<%=stock_count%>">
 					
 					<button type="submit">결제하기</button>

@@ -2,6 +2,8 @@
 <%@ page import="java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+<%@ page import=" java.sql.Timestamp"%>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%
 request.setCharacterEncoding("UTF-8");
 
@@ -19,11 +21,15 @@ String mail = mail1 + "@" + mail2;
 String phone = request.getParameter("phone");
 String address = request.getParameter("address");
 String cyworld_URl = "https://cyworld.com/" + id;
-Date currentDatetime = new Date(System.currentTimeMillis());
-java.sql.Date sqlDate = new java.sql.Date(currentDatetime.getTime());
-java.sql.Timestamp timestamp = new java.sql.Timestamp(currentDatetime.getTime());
 
+Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+String formattedDate = sdf.format(timestamp);
+
+
+String user_background = "outer/backgroundouter.png";
 int number =0;
+String stock_background_contents="기본이미지";
 int user_today_visit = 0;
 int user_total_visit = 0;
 int profile_number = 0;
@@ -37,7 +43,7 @@ int dotori = 500;
 	driver="com.mysql.jdbc.Driver" user="root" password="1111" />
 
 <sql:update dataSource="${dataSource}" var="resultSet">
-   INSERT INTO user VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)
+   INSERT INTO user VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?)
    <sql:param value="<%=id%>" />
 	<sql:param value="<%=password%>" />
 	<sql:param value="<%=name%>" />
@@ -49,7 +55,7 @@ int dotori = 500;
 	<sql:param value="<%=cyworld_URl%>" />
 	<sql:param value="<%=timestamp%>" />
 	<sql:param value="<%=dotori%>" />
-	 
+	 <sql:param value = "<%=user_background %>"/>
 	 
 	<%session.setAttribute("id", id); %>
 </sql:update>
@@ -64,6 +70,16 @@ int dotori = 500;
    <sql:param value="<%=user_introduce_text%>" />
 </sql:update>
 
+<sql:update dataSource="${dataSource}" var="resultSet1">
+   INSERT INTO user_purchase (user_id, stock_background_file , stock_background_price,stock_background_contents,stock_background_buy_date)
+   VALUES (?, ?, ?,?,?)
+   <sql:param value="<%=id%>" />
+   <sql:param value="<%=user_background%>" />
+   <sql:param value="<%=number%>" />
+    <sql:param value="<%=stock_background_contents%>" />
+ <sql:param value="<%=formattedDate%>" />
+
+</sql:update>
 
 <c:if test="${resultSet>=1 &&resultSet1>=1}">
 

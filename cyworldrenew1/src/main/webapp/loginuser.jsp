@@ -69,9 +69,7 @@ ilchon_count = rs3.getInt(1);
 	e.printStackTrace();
 }
 %>
-<script type="text/javascript">
-alert("<%=user_id%>님 환영합니다");
-</script>
+
 <div id="imgboxbox">
 		<div id="imgbox" class="imgbox">
 			<img id="img1" class="imgslide" src="background/cyworld login.jpg">
@@ -93,7 +91,7 @@ alert("<%=user_id%>님 환영합니다");
 			<div id="menudiv1">
 				<nav id="menudiv_menu">
 					<ul>
-						<span>Menu1</span>
+						<span><a href="background_purchase.jsp">배경화면</a></span>
 					</ul>
 					<ul>
 						<span>Menu2</span>
@@ -102,7 +100,7 @@ alert("<%=user_id%>님 환영합니다");
 						<span>Menu3</span>
 					</ul>
 					<ul>
-						<span>Menu4</span>
+						<span><a href="having_effect.jsp">보유효과</a></span>
 					</ul>
 				</nav>
 				<div id="menulistdiv">
@@ -193,7 +191,13 @@ alert("<%=user_id%>님 환영합니다");
 
 			<div id="logininfodiv" >
 			<div id="logininfo_img" >
-			<img alt="" src="userprofileimg/<%=user_profile_photo %>" ></div>
+			<%if(user_profile_photo==null){%><img alt="" src="userprofileimg/default123.jpg"><% }else
+				{%><img alt="" src="userprofileimg/<%=user_profile_photo%>"><%}%>
+			
+			
+			
+			
+			</div>
 			<div id="logininfo_user" >
 			<div>이름 :<%=user_name %> </div>
 			<div>싸이월드주소 :<%= cyworld_url%> </div>
@@ -208,7 +212,7 @@ alert("<%=user_id%>님 환영합니다");
 			
 			</div>
 			
-		</div>
+		</div>	</div>
 	</div>
 	<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
 	<script>

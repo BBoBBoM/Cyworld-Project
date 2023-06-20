@@ -11,23 +11,17 @@
 <%@ include file="dbconn.jsp" %>
 <%  
 	request.setCharacterEncoding("UTF-8");
-String year = request.getParameter("year");
-String month = request.getParameter("month");
-String day = request.getParameter("day");
-String content = request.getParameter("add_diary");
-String date = year +"-"+month + "-" +day;
-int number = 0;
+
 	String user_id = (String)session.getAttribute("sessionId");
-	
+	String selectedValue = request.getParameter("radioGroup");
+	 
 	PreparedStatement pstmt = null;	
 	
-	String sql = "insert into diary value(?,?,?,?)";
+	String sql = "UPDATE user SET user_background = ? WHERE user_id = ?";
 
 	pstmt = conn.prepareStatement(sql);
-	pstmt.setInt(1, number);
 	pstmt.setString(2, user_id);
-	pstmt.setString(3, content);
-	pstmt.setString(4, date);
+	pstmt.setString(1, selectedValue);
 	int rs =pstmt.executeUpdate();
 
 	if (pstmt != null)
@@ -36,16 +30,12 @@ int number = 0;
 		%>
 	<script type="text/javascript">
 
-		rs.close();
-		alert("<%=date%>일기가 등록되었습니다");
-		history.go(-1);
-		
+	
+		alert("효과가 변경되었습니다.");
+		window.location.href = "loginuser.jsp";
 		</script>
 		<%}	
-
+	
 
 	%>
 	
-
-
-

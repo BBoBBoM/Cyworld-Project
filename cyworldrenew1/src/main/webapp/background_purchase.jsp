@@ -24,6 +24,8 @@ String user_name = null;
 int dotori = 0;
 int ilchon_count = 0;
 String user_profile_photo = null;
+String user_having_effect1 ="";
+List<String> user_having_effect = new ArrayList<>();
 
 
 List<String> background_file_name = new ArrayList<>();
@@ -39,7 +41,7 @@ List<String> contents = (List<String>) session.getAttribute("session_contents");
 try {
 	String sql = "select * from user where user_id=?";
 	String sql1 = "select * from profile where user_id=?";
-
+	String sql2 = "select * from user_purchase where user_id=?";
 	String sql3 = "SELECT COUNT(DISTINCT ilchon_id) FROM visit_board WHERE user_id = ?";
 	String sql4 = "select * from company_background_stock";
 	pstmt = conn.prepareStatement(sql);
@@ -56,7 +58,14 @@ try {
 	while (rs1.next()) {
 		user_profile_photo = rs1.getString("user_profile_photo");
 	}
-
+	pstmt = conn.prepareStatement(sql2);
+	pstmt.setString(1, user_id); // user_id 값을 설정해야 합니다.
+	ResultSet rs2 = pstmt.executeQuery();
+	while (rs2.next()) {
+		user_having_effect1 = rs2.getString("stock_background_file");
+		user_having_effect1 = user_having_effect1.replace("outer/", "");
+		user_having_effect.add(user_having_effect1);
+	}
 	pstmt = conn.prepareStatement(sql3);
 	pstmt.setString(1, user_id); // user_id 값을 설정해야 합니다.
 	ResultSet rs3 = pstmt.executeQuery();
@@ -77,6 +86,17 @@ try {
 } catch (SQLException e) {
 	e.printStackTrace();
 }
+for(int i= 0; i<user_having_effect.size();i++){
+	for(int j = 0; j <background_file_name.size();j++){
+		if(user_having_effect.get(i).equals(background_file_name.get(j))){
+			background_file_name.remove(j);
+		 background_price.remove(j);
+		 background_contents.remove(j);
+		}
+	}
+	
+}
+
 %>
 </head>
 
@@ -112,7 +132,7 @@ try {
 						<span>Menu3</span>
 					</ul>
 					<ul>
-						<span>Menu4</span>
+						<span><a href="having_effect.jsp">보유효과</a></span>
 					</ul>
 				</nav>
 				<div id="menulistdiv">

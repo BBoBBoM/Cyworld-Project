@@ -34,6 +34,9 @@ String stock_background_contents1="";
 List<String> stock_background_file = new ArrayList<>();
 List<String>stock_background_contents = new ArrayList<>();
 
+
+
+
 try {
 	String sql = "select * from user where user_id=?";
 	String sql1 = "select * from profile where user_id=?";
@@ -197,7 +200,7 @@ ilchon_count = rs3.getInt(1);
 		</div>
 
 		<div id="stock_div">
-		
+		<form action="effect_change.jsp"method="post">
 
 			<%
 			for (int i = 0; i < stock_background_file.size(); i++) {
@@ -216,11 +219,11 @@ ilchon_count = rs3.getInt(1);
 
 							<%=stock_background_contents.get(i)%>
 						</div>
+						<div id="radio button"><input type="radio" id="option<%=i %>"name="radioGroup" value="<%=stock_background_file.get(i) %>"></div>
 						<div >
-							<form action="add_cart.jsp"method="post">
-
-								<button type="submit">적용하기</button>
-							</form>
+							
+								<button type="button" onclick="checkRadioSelected()">적용하기</button>
+						
 						</div>
 					</div>
 
@@ -228,8 +231,36 @@ ilchon_count = rs3.getInt(1);
 			</div>
 			<%
 			}
-			%>
+			%>	</form>
 		</div>
+<script>
+  function checkRadioSelected() {
+    // 라디오 버튼 체크 여부 확인
+    var radioButtons = document.getElementsByName("radioGroup");
+    var isSelected = false;
+    for (var i = 0; i < radioButtons.length; i++) {
+      if (radioButtons[i].checked) {
+        isSelected = true;
+        break;
+      }
+    }
+
+    // 라디오 버튼이 선택되었을 경우 폼 전송
+    if (isSelected) {
+    	 document.forms[0].submit();
+    } else {
+      alert("라디오 버튼을 선택하세요.");
+      return false;
+    }
+  }
+  window.onload = function() {
+	    // 라디오 버튼 체크해제
+	    var radioButtons = document.getElementsByName("radioGroup");
+	    for (var i = 0; i < radioButtons.length; i++) {
+	      radioButtons[i].checked = false;
+	    }
+	  };
+</script>
 
 
 			<div id="logininfodiv" >

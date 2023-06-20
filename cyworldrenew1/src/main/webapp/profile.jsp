@@ -25,6 +25,7 @@ String user_profile_photo1 = "";
 int user_today_visit = 0;
 int user_total_visit = 0;
 String user_introduce_text="";
+String user_background = "";
 try {
 	String sql = "select * from user where user_id=?";
 	String sql1 = "select * from profile where user_id=?";
@@ -36,6 +37,7 @@ try {
 		cyworld_url = rs.getString("cyworld_url");
 		user_name = rs.getString("user_name");
 		email = rs.getString("email");
+		user_background = rs.getString("user_background");
 	}
 	pstmt = conn.prepareStatement(sql1);
 	pstmt.setString(1, user_id); // user_id 값을 설정해야 합니다.
@@ -67,6 +69,8 @@ try {
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="profile1.css" rel="stylesheet" type="text/css" />
+<link href = "backgroundEffect/sakura.css"rel="stylesheet" type="text/css" />
+
 </head>
 
 
@@ -79,8 +83,13 @@ try {
     }
   </script>
 <script src="profile.js"></script>
+
 	<div id="mini_container">
-		<div id="mini_background1">
+			<div id="mini_background1" style="width: 100%;
+	height: 100%;
+	background: url(<%=user_background%>) no-repeat center;
+	background-size: 100% 100%;
+	position: absolute;">
 			<div id="mini_background2">
 				<div id="all_contentsdiv">
 					<div id="left_contentsborderdiv">
@@ -258,11 +267,21 @@ document
 				</div>
 											<div id="dotori_div">
 					<div id="current_dotori">보유도토리</div>
+					<div id = "having_effect"><a href ="having_effect.jsp">배경화면 바꾸기</a></div>
 					<div><a href="index.jsp"></a> 도토리 장터</div></div>
 				</div>
 			</div>
 		</div>
 
 	</div>
+	
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+$(window).load(function () {
+    $('body').sakura();
+});
+</script>
+
+<script src="backgroundEffect/sakura.js"></script>
 </body>
 </html>
