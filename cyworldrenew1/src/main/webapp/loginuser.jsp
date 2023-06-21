@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ page import="java.util.*"%>
+	pageEncoding="UTF-8"%>
+<%@ page import="java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 
 
 
-    
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,65 +19,65 @@
 
 <body>
 
-<div style="display: none;"><%@ include file="dbconn.jsp"%></div>
-<%
-request.setCharacterEncoding("UTF-8");
-String user_id = (String) session.getAttribute("sessionId");
-PreparedStatement pstmt;
-String cyworld_url = null;
-String user_name = null;
-int dotori=0;
-int ilchon_count = 0;
-String user_profile_photo = null;
-int user_today_visit = 0;
-int user_total_visit = 0;
+	<div style="display: none;"><%@ include file="dbconn.jsp"%></div>
+	<%
+	request.setCharacterEncoding("UTF-8");
+	String user_id = (String) session.getAttribute("sessionId");
+	PreparedStatement pstmt;
+	String cyworld_url = null;
+	String user_name = null;
+	int dotori = 0;
+	int ilchon_count = 0;
+	String user_profile_photo = null;
+	int user_today_visit = 0;
+	int user_total_visit = 0;
 
-try {
-	String sql = "select * from user where user_id=?";
-	String sql1 = "select * from profile where user_id=?";
-	String sql2 = "select * from user_visitrate where user_id=?";
-	String sql3 ="SELECT COUNT(DISTINCT ilchon_id) FROM visit_board WHERE user_id = ?";
-	pstmt = conn.prepareStatement(sql);
-	pstmt.setString(1, user_id);
-	ResultSet rs = pstmt.executeQuery();
-	while (rs.next()) {
-		cyworld_url = rs.getString("cyworld_url");
-		user_name = rs.getString("user_name");
-		dotori =rs.getInt("dotori");	
-	}
-	pstmt = conn.prepareStatement(sql1);
-	pstmt.setString(1, user_id); // user_id 값을 설정해야 합니다.
-	ResultSet rs1 = pstmt.executeQuery();
-	while (rs1.next()) {
-		user_profile_photo = rs1.getString("user_profile_photo");
-	}
-	pstmt = conn.prepareStatement(sql2);
-	pstmt.setString(1, user_id); // user_id 값을 설정해야 합니다.
-	ResultSet rs2 = pstmt.executeQuery();
-	while (rs2.next()) {
-		user_today_visit = rs2.getInt("user_today_visit");
-		user_total_visit = rs2.getInt("user_total_visit");
-	}
-	pstmt = conn.prepareStatement(sql3);
-	pstmt.setString(1, user_id); // user_id 값을 설정해야 합니다.
-	ResultSet rs3 = pstmt.executeQuery();
-	while (rs3.next()) {
-ilchon_count = rs3.getInt(1);
-	}
+	try {
+		String sql = "select * from user where user_id=?";
+		String sql1 = "select * from profile where user_id=?";
+		String sql2 = "select * from user_visitrate where user_id=?";
+		String sql3 = "SELECT COUNT(DISTINCT ilchon_id) FROM visit_board WHERE user_id = ?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, user_id);
+		ResultSet rs = pstmt.executeQuery();
+		while (rs.next()) {
+			cyworld_url = rs.getString("cyworld_url");
+			user_name = rs.getString("user_name");
+			dotori = rs.getInt("dotori");
+		}
+		pstmt = conn.prepareStatement(sql1);
+		pstmt.setString(1, user_id); // user_id 값을 설정해야 합니다.
+		ResultSet rs1 = pstmt.executeQuery();
+		while (rs1.next()) {
+			user_profile_photo = rs1.getString("user_profile_photo");
+		}
+		pstmt = conn.prepareStatement(sql2);
+		pstmt.setString(1, user_id); // user_id 값을 설정해야 합니다.
+		ResultSet rs2 = pstmt.executeQuery();
+		while (rs2.next()) {
+			user_today_visit = rs2.getInt("user_today_visit");
+			user_total_visit = rs2.getInt("user_total_visit");
+		}
+		pstmt = conn.prepareStatement(sql3);
+		pstmt.setString(1, user_id); // user_id 값을 설정해야 합니다.
+		ResultSet rs3 = pstmt.executeQuery();
+		while (rs3.next()) {
+			ilchon_count = rs3.getInt(1);
+		}
 
-} catch (SQLException e) {
-	e.printStackTrace();
-}
-%>
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	%>
 
-<div id="imgboxbox">
+	<div id="imgboxbox">
 		<div id="imgbox" class="imgbox">
 			<img id="img1" class="imgslide" src="background/cyworld login.jpg">
 			<img id="img2" class="imgslide" src="background/cyworld login1.jpg">
 			<img id="img3" class="imgslide" src="background/cyworld login2.jpg">
 		</div>
 	</div>
-		<div id="alldiv">
+	<div id="alldiv">
 
 		<div id="subject_menudiv">
 			<header id="header1">
@@ -189,30 +189,53 @@ ilchon_count = rs3.getInt(1);
 		</div>
 
 
-			<div id="logininfodiv" >
-			<div id="logininfo_img" >
-			<%if(user_profile_photo==null){%><img alt="" src="userprofileimg/default123.jpg"><% }else
-				{%><img alt="" src="userprofileimg/<%=user_profile_photo%>"><%}%>
-			
-			
-			
-			
-			</div>
-			<div id="logininfo_user" >
-			<div>이름 :<%=user_name %> </div>
-			<div>싸이월드주소 :<%= cyworld_url%> </div>
-				<div><img src="background/acorn.png" style="width:10%;height:70%;background-repeat: no-repeat;background-position: center;background-size: cover;" >보유 도토리 :<%=dotori %> </div>
-			<div>나랑일촌 :<%=ilchon_count %></div>
-			<div style="display:flex;"><form action="index.jsp" method = 'post'><input type ='submit' value = "나의 미니홈피로 이동하기"></form>
-			<div id="logout_button" style="margin-left:10px;" ><form action="logout.jsp">
-  <button type="submit">로그아웃</button>
-</form></div>
-		
+		<div id="logininfodiv">
+			<div id="logininfo_img">
+				<%
+				if (user_profile_photo == null) {
+				%><img alt=""
+					src="userprofileimg/default123.jpg">
+				<%
+				} else {
+				%><img alt="" src="userprofileimg/<%=user_profile_photo%>">
+				<%
+				}
+				%>
 
-			
+
+
+
 			</div>
-			
-		</div>	</div>
+			<div id="logininfo_user">
+				<div>
+					이름 :<%=user_name%>
+				</div>
+				<div>
+					싸이월드주소 :<%=cyworld_url%>
+				</div>
+				<div>
+					<img src="background/acorn.png"
+						style="width: 10%; height: 70%; background-repeat: no-repeat; background-position: center; background-size: cover;">보유
+					도토리 :<%=dotori%>
+				</div>
+				<div>
+					나랑일촌 :<%=ilchon_count%></div>
+				<div style="display: flex;">
+					<form action="index.jsp" method='post'>
+						<input type='submit' value="나의 미니홈피로 이동하기">
+					</form>
+					<div id="logout_button" style="margin-left: 10px;">
+						<form action="logout.jsp">
+							<button type="submit">로그아웃</button>
+						</form>
+					</div>
+
+					<button style="position:absolute; top:2%; right:2%;"><a href = "basic_info.jsp">기본정보 설정하러가기</a>
+</button>
+				</div>
+
+			</div>
+		</div>
 	</div>
 	<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
 	<script>

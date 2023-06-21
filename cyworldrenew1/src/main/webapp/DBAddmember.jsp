@@ -57,7 +57,7 @@ int dotori = 500;
 	<sql:param value="<%=dotori%>" />
 	 <sql:param value = "<%=user_background %>"/>
 	 
-	<%session.setAttribute("id", id); %>
+	<%session.setAttribute("sessionId", id); %>
 </sql:update>
 
 

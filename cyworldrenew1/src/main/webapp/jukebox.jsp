@@ -488,14 +488,11 @@ try {
 							<script>
 							let src = [
 								<%for (int i = 0; i < music_subject.size(); i++) {
-
 	if (i == music_subject.size() - 1) {%>'<%=music_subject.get(i)%>.mp3'<%} else {%>
-									'<%=music_subject.get(i)%>.mp3',
-									
+									'<%=music_subject.get(i)%>.mp3',	
 									<%}%>
 								<%}%>
 							];
-		
 let currentIndex = 0;
 let audioPlayer = document.getElementById('audioPlayer');
 let audioSource = document.getElementById('audioSource');
@@ -507,8 +504,6 @@ function playaudio(name, index){
 	audioPlayer.load();
 	audioPlayer.play();
 	subjectname.innerHTML =name.replace('music/', '') + ' 재생중';
-	
-	
 	  let images = document.querySelectorAll('[id^=image]');
 	  //[^ id 속성 값이 "image"로 시작하는 모든 요소를 선택하는 역할 ^는 "시작하는"을 의미]
 	  for (let i = 0; i < images.length; i++) {
@@ -516,18 +511,13 @@ function playaudio(name, index){
 	  }
 	document.getElementById('image' + index).style.display = 'block';
 }
-
 function play(){
     audioPlayer.pause();
     audioSource.src = "music/" + src[currentIndex];
     audioPlayer.load();
     audioPlayer.play();
-    subjectname.innerHTML = src[currentIndex] + ' 재생중';
-
-  
+    subjectname.innerHTML = src[currentIndex] + ' 재생중'; 
 }
-
-
 function pre_song(){
 	if (currentIndex === 0) {
 		currentIndex = src.length - 1;
@@ -539,7 +529,6 @@ function pre_song(){
 	audioPlayer.play();
 	subjectname.innerHTML =src[currentIndex] + '재생중'  
 }
-
 function next_song(){
 	if (currentIndex === src.length - 1) {
 		currentIndex = 0;
@@ -551,8 +540,6 @@ function next_song(){
 	audioPlayer.play();
 	subjectname.innerHTML =src[currentIndex] + '재생중'  
 }
-
-
 </script>
 
 							<div id="right_menu">

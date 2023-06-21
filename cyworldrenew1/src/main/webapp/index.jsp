@@ -377,8 +377,7 @@ document
 
 									<img alt=""
 										src="userprofileimg/
-									<%if (user_miniroom_file == null || user_miniroom_file.equals("")) {%>		miniroom1.png"
-										<%} else {%> <%=user_miniroom_file%> <%} ;%>
+									<%if (user_miniroom_file == null || user_miniroom_file.equals("")) {%>miniroom1.png"<%} else {%> <%=user_miniroom_file%> <%} ;%>
 										style="width: 100%; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
 
 									<div id="miniroom_img_edit">

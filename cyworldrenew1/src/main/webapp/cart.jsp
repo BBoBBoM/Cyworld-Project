@@ -96,7 +96,7 @@
 						<span>Menu3</span>
 					</ul>
 					<ul>
-						<span>Menu4</span>
+						<span><a href="having_effect.jsp">보유효과</a></span>
 					</ul>
 				</nav>
 				<div id="menulistdiv">
@@ -202,7 +202,7 @@
 			}
 			for (int i = 0; i < session_file_name.size(); i++) {
 			%>
-			<div id="stock_all">
+			<div id="stock_all" style = "display:inline-flex;">
 				<div id="stock_img">
 					<img src="<%=session_file_name.get(i)%>">
 				</div>
