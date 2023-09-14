@@ -1,3 +1,7 @@
+http://naver.me/FawQnLYD
+실행동영상입니다.
+
+
 # Cyworld-Project
 본인이 작업한 PC환경 및 사용한 IDE
 
