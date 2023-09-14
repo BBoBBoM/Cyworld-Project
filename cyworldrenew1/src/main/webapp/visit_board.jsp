@@ -123,7 +123,7 @@ try {
 <head>
 
 <title>Insert title here</title>
-<link href="visit_board1.css" rel="stylesheet" type="text/css" />
+<link href="visit_board.css" rel="stylesheet" type="text/css" />
 <link href = "backgroundEffect/sakura.css"rel="stylesheet" type="text/css" />
 
 </head>
@@ -151,7 +151,9 @@ try {
 
 						<div id="left_contentsdiv">
 							<div id="left_contentsdiv1">
+
 								<div id="left_contents_userinfo">
+
 									<%
 									if (gender.equals("남") && user_profile_photo == null) {
 									%>
@@ -165,6 +167,7 @@ try {
 												style="display: none;"> <input type="file"
 												id="fileinput" name="fileinput" style="display: none;">
 										</form>
+
 										<script>
 											// 파일 선택 창 열기 및 자동 전환
 											function selectFile() {
@@ -184,6 +187,8 @@ try {
 																		.click();
 															});
 										</script>
+
+
 									</div>
 									<%
 									} else if (gender.equals("여") && user_profile_photo.equals("") || user_profile_photo.equals(null)) {

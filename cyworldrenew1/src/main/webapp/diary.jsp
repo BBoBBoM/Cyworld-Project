@@ -83,7 +83,7 @@ try {
 <head>
 
 <title>Insert title here</title>
-<link href="diary1.css" rel="stylesheet" type="text/css" />
+<link href="diary.css" rel="stylesheet" type="text/css" />
 <link href = "backgroundEffect/sakura.css"rel="stylesheet" type="text/css" />
 
     <script>

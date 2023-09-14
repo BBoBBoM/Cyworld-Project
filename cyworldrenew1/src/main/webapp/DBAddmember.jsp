@@ -7,7 +7,8 @@
 <%
 request.setCharacterEncoding("UTF-8");
 
-String id = request.getParameter("id");
+String id = request.getParameter("userId");
+
 String password = request.getParameter("password");
 String name = request.getParameter("name"); 
 String gender = request.getParameter("gender");
@@ -19,7 +20,9 @@ String mail1 = request.getParameter("mail1");
 String mail2 = request.getParameterValues("mail2")[0];
 String mail = mail1 + "@" + mail2;
 String phone = request.getParameter("phone");
-String address = request.getParameter("address");
+String address = request.getParameter("road_address");
+
+
 String cyworld_URl = "https://cyworld.com/" + id;
 
 Timestamp timestamp = new Timestamp(System.currentTimeMillis());
@@ -40,6 +43,7 @@ int dotori = 500;
 
 <sql:setDataSource var="dataSource"
 	url="jdbc:mysql://localhost:3306/cyworld"
+	
 	driver="com.mysql.jdbc.Driver" user="root" password="1111" />
 
 <sql:update dataSource="${dataSource}" var="resultSet">
@@ -57,7 +61,7 @@ int dotori = 500;
 	<sql:param value="<%=dotori%>" />
 	 <sql:param value = "<%=user_background %>"/>
 	 
-	<%session.setAttribute("sessionId", id); %>
+	<%session.setAttribute("id", id); %>
 </sql:update>
 
 

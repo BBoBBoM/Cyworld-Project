@@ -12,7 +12,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="having_effect1.css" rel="stylesheet" type="text/css" />
+<link href="having_effect.css" rel="stylesheet" type="text/css" />
 
 
 </head>
@@ -204,7 +204,7 @@ ilchon_count = rs3.getInt(1);
 
 			<%
 			for (int i = 0; i < stock_background_file.size(); i++) {
-			%><div id="stock_div_inner" style="display:inline-flex;"
+			%><div id="stock_div_inner"
 				>
 			
 					<div id="stock_div_img">

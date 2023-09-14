@@ -26,10 +26,7 @@ int user_today_visit = 0;
 int user_total_visit = 0;
 String user_background = "";
 
-
-String user_date="";
-
-
+String user_date = "";
 
 int countDiary = 0;
 int countPhoto = 0;
@@ -70,7 +67,6 @@ try {
 		user_today_visit = rs2.getInt("user_today_visit");
 		user_total_visit = rs2.getInt("user_total_visit");
 
-
 	}
 
 	for (String table : tables) {
@@ -101,20 +97,23 @@ try {
 <head>
 
 <title>Insert title here</title>
-<link href="index1.css" rel="stylesheet" type="text/css" />
-<link href = "backgroundEffect/sakura.css"rel="stylesheet" type="text/css" />
+<link href="index.css" rel="stylesheet" type="text/css" />
+<link href="backgroundEffect/sakura.css" rel="stylesheet"
+	type="text/css" />
 </head>
 
 <body>
-  <script>
-    // 이전 페이지 새로고침
-    if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
-      location.reload();
-    }
-  </script>
-<script src = "index.js"></script>
+	<script>
+		// 이전 페이지 새로고침
+		if (window.performance
+				&& window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
+			location.reload();
+		}
+	</script>
+	<script src="index.js"></script>
 	<div id="mini_container">
-		<div id="mini_background1" style="width: 100%;
+		<div id="mini_background1"
+			style="width: 100%;
 	height: 100%;
 	background: url(<%=user_background%>) no-repeat center;
 	background-size: 100% 100%;
@@ -201,41 +200,44 @@ try {
 											onclick="feeling('슬퍼', 2)" style="display: none;" value="슬퍼">
 									</div>
 
-<script>
-// 파일 선택 창 열기 및 자동 전환
-function selectFile() {
-	document.getElementById(
-		'fileinput').click();
-}
+									<script>
+										// 파일 선택 창 열기 및 자동 전환
+										function selectFile() {
+											document
+													.getElementById('fileinput')
+													.click();
+										}
 
-// 파일이 선택되었을 때 자동으로 페이지 전환
-document
-	.getElementById('fileinput')
-	.addEventListener(
-		'change',
-		function() {
-			document
-				.getElementById(
-					'edit_input')
-				.click();
-		});
-// 파일 선택 창 열기 및 자동 전환
-function selectFile() {
-	document.getElementById(
-		'fileinput').click();
-}
+										// 파일이 선택되었을 때 자동으로 페이지 전환
+										document
+												.getElementById('fileinput')
+												.addEventListener(
+														'change',
+														function() {
+															document
+																	.getElementById(
+																			'edit_input')
+																	.click();
+														});
+										// 파일 선택 창 열기 및 자동 전환
+										function selectFile() {
+											document
+													.getElementById('fileinput')
+													.click();
+										}
 
-// 파일이 선택되었을 때 자동으로 페이지 전환
-document
-	.getElementById('fileinput')
-	.addEventListener(
-		'change',
-		function() {
-			document
-				.getElementById(
-					'edit_input')
-				.click();
-		});</script>
+										// 파일이 선택되었을 때 자동으로 페이지 전환
+										document
+												.getElementById('fileinput')
+												.addEventListener(
+														'change',
+														function() {
+															document
+																	.getElementById(
+																			'edit_input')
+																	.click();
+														});
+									</script>
 
 
 
@@ -272,7 +274,7 @@ document
 										</form>
 									</div>
 
-								
+
 									<hr
 										style="width: 95%; position: absolute; top: 71%; border: 1px solid black;">
 									<div id="user_name_email">
@@ -300,7 +302,8 @@ document
 
 
 					</div>
-<div id="left_right_borderdiv" style="position:absolute;width:1%;height:78%;border-left:1px solid black;top:13%;left:30.5%"></div>
+					<div id="left_right_borderdiv"
+						style="position: absolute; width: 1%; height: 78%; border-left: 1px solid black; top: 13%; left: 30.5%"></div>
 					<div id="center_contentsdiv">
 						<div id="center_subject">
 							<div id="user_mini_subject">
@@ -377,7 +380,8 @@ document
 
 									<img alt=""
 										src="userprofileimg/
-									<%if (user_miniroom_file == null || user_miniroom_file.equals("")) {%>miniroom1.png"<%} else {%> <%=user_miniroom_file%> <%} ;%>
+									<%if (user_miniroom_file == null || user_miniroom_file.equals("")) {%>		miniroom1.png"
+										<%} else {%> <%=user_miniroom_file%> <%} ;%>
 										style="width: 100%; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;">
 
 									<div id="miniroom_img_edit">
@@ -387,8 +391,7 @@ document
 									</div>
 
 								</div>
-								<div id="center_comment">DB에 평가란 만들어서 날짜 별로 가장 상위 3개만 뿌리는? 본인은 작성하지 못하고 타인이 본인의 홈피에 방문했을때 남기기 버튼 생기게?
-								</div>
+								<div id="center_comment">일촌평</div>
 							</div>
 						</div>
 					</div>
@@ -444,23 +447,29 @@ document
 						</div>
 					</div>
 					<div id="dotori_div">
-					<div id="current_dotori">보유도토리</div>
-					<div id = "having_effect"><a href ="having_effect.jsp">배경화면 바꾸기</a></div>
-					<div><a href="index.jsp"></a> 도토리 장터</div></div>
-					
+						<div id="current_dotori">보유도토리</div>
+						<div id="having_effect">
+							<a href="having_effect.jsp">배경화면 바꾸기</a>
+						</div>
+						<div>
+							<a href="index.jsp"></a> 도토리 장터
+						</div>
+					</div>
+
 				</div>
-			
+
 			</div>
 		</div>
 	</div>
-	
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>
-$(window).load(function () {
-    $('body').sakura();
-});
-</script>
 
-<script src="backgroundEffect/sakura.js"></script>
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		$(window).load(function() {
+			$('body').sakura();
+		});
+	</script>
+
+	<script src="backgroundEffect/sakura.js"></script>
 </body>
 </html>

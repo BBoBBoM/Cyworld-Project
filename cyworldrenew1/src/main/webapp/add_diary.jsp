@@ -32,20 +32,13 @@ int number = 0;
 
 	if (pstmt != null)
 		{pstmt.close();}
-	if (rs ==1){
-		%>
-	<script type="text/javascript">
-
-		rs.close();
-		alert("<%=date%>일기가 등록되었습니다");
-		history.go(-1);
-		
-		</script>
-		<%}	
-
-
-	%>
-	
-
+	if (rs == 1) {
+	    %>
+	    rs.close();
+	    <script type="text/javascript">
+	        alert("<%=date%>일기가 등록되었습니다");
+	        window.location.href = document.referrer; // 이전 페이지로 리디렉션
+	    </script>
+	    <%}%>
 
 

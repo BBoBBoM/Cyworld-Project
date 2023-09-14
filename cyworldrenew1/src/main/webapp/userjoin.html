@@ -1,107 +1,231 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>회원가입</title>
 </head>
 <body>
-    <body>
-        <div class="jumbotron">
-            <div class="container">
-                <h1 class="display-3">회원 가입</h1>
-            </div>
-        </div>
-    
-        <div class="container">
-            <form name="newMember" class="form-horizontal"  action="DBAddmember.jsp" method="post" onsubmit="return checkForm()">
-                <div class="form-group  row">
-                    <label >아이디</label>
-                    <div>
-                        <input name="id" type="text" class="form-control" placeholder="아이디" >
-                    </div>
-                </div>
-                <div >
-                    <label >비밀번호</label>
-                    <div>
-                        <input name="password" type="password" class="form-control" placeholder="비밀번호" >
-                    </div>
-                </div>
-                <div >
-                    <label >비밀번호확인</label>
-                    <div>
-                        <input name="password_confirm" type="password" class="form-control" placeholder="비밀번호 재입력" >
-                    </div>
-                </div>
-                <div >
-                    <label >성명</label>
-                    <div >
-                        <input name="name" type="text" class="form-control" placeholder="이름" >
-                    </div>
-                </div>
-                <div >
-                    <label >성별</label>
-                    <div >
-                        <input name="gender" type="radio" value="남" /> 남 
-                        <input name="gender" type="radio" value="여" /> 여
-                    </div>
-                </div>
-                <div >
-                    <label >생일</label>
-                    <div >
-                        <input type="text" name="birthyy" maxlength="4" placeholder="년(4자)" size="6"> 
-                        <select name="birthmm">
-                            <option value="">월</option>
-                            <option value="01">1</option>
-                            <option value="02">2</option>
-                            <option value="03">3</option>
-                            <option value="04">4</option>
-                            <option value="05">5</option>
-                            <option value="06">6</option>
-                            <option value="07">7</option>
-                            <option value="08">8</option>
-                            <option value="09">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        </select> <input type="text" name="birthdd" maxlength="2" placeholder="일" size="4">
-                    </div>
-                </div>
-                <div >
-                    <label >이메일</label>
-                    <div >
-                        <input type="text" name="mail1" maxlength="50">@ 
-                        <select name="mail2">
-                            <option>naver.com</option>
-                            <option>daum.net</option>
-                            <option>gmail.com</option>
-                            <option>nate.com</option>
-                        </select>
-                    </div>				
-                </div>
-                <div >
-                    <label >전화번호</label>
-                    <div >
-                        <input name="phone" type="text" >
-    
-                    </div>
-                </div>
-                <div >
-                    <label >주소</label>
-                    <div >
-                        <input name="address" type="text">
-    
-                    </div>
-                </div>
-                <div >
-                    <div>
-                        <input type="submit" class="btn btn-primary " value="등록 " > 
-                        <input type="reset" class="btn btn-primary " value="취소 " onclick="reset()" >
-                    </div>
-                </div>
-            </form>
-        </div>
-    </body>
+
+	<div class="jumbotron">
+		<div class="container">
+			<h1 class="display-3">회원 가입</h1>
+		</div>
+	</div>
+
+	<div class="container">
+		<form name="newMember" class="form-horizontal"
+			action="DBAddmember.jsp" method="post" onsubmit="return checkForm()">
+			<div class="form-group  row">
+				<label>아이디</label>
+				<div>
+
+					<input type="text" id="userId" name="userId">
+					<button type="button" onclick="checkDuplicate()">중복확인</button>
+					<span id="duplicateResult"></span>
+
+
+				</div>
+			</div>
+			<div>
+				<label>비밀번호</label>
+				<div>
+					<input name="password" type="password" class="form-control"
+						placeholder="비밀번호">
+				</div>
+			</div>
+			<div>
+				<label>비밀번호확인</label>
+				<div>
+					<input name="password_confirm" type="password" class="form-control"
+						placeholder="비밀번호 재입력">
+				</div>
+			</div>
+			<div>
+				<label>성명</label>
+				<div>
+					<input name="name" type="text" class="form-control"
+						placeholder="이름">
+				</div>
+			</div>
+			<div>
+				<label>성별</label>
+				<div>
+					<input name="gender" type="radio" value="남" /> 남 <input
+						name="gender" type="radio" value="여" /> 여
+				</div>
+			</div>
+			<div>
+				<label>생일</label>
+				<div>
+					<input type="text" name="birthyy" maxlength="4" placeholder="년(4자)"
+						size="6"> <select name="birthmm">
+						<option value="">월</option>
+						<option value="01">1</option>
+						<option value="02">2</option>
+						<option value="03">3</option>
+						<option value="04">4</option>
+						<option value="05">5</option>
+						<option value="06">6</option>
+						<option value="07">7</option>
+						<option value="08">8</option>
+						<option value="09">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+					</select> <input type="text" name="birthdd" maxlength="2" placeholder="일"
+						size="4">
+				</div>
+			</div>
+			<div>
+				<label>이메일</label>
+				<div>
+					<input type="text" name="mail1" maxlength="50">@ <select
+						name="mail2" onchange="selfinput()">
+						<option>naver.com</option>
+						<option>daum.net</option>
+						<option>gmail.com</option>
+						<option>nate.com</option>
+						<option>직접입력</option>
+					</select> <input type="text" name="mail3" maxlength="50"
+						style="display: none">
+				</div>
+			</div>
+			<div></div>
+			<div>
+				<label>전화번호</label>
+
+				<div>
+					<input name="phone" type="text">
+
+				</div>
+			</div>
+			<div>
+				<label>주소</label>
+				<div>
+					<input type="text" id="sample4_postcode" name="address_number"placeholder="우편번호"> 
+					<input type="button"onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+					<input type="text" id="sample4_roadAddress" name="road_address"placeholder="도로명주소" size="60"><br> 
+					<input type="hidden" id="sample4_jibunAddress" placeholder="지번주소" size="60"> 
+					<span id="guide"style="color: #999; display: none"></span> 
+					<input type="text" id="sample4_detailAddress" name="etc_address" placeholder="상세주소" size="60">
+						<br> 
+						<input type="hidden"
+						id="sample4_extraAddress" placeholder="참고항목" size="60"> <input
+						type="hidden" id="sample4_engAddress" placeholder="영문주소" size="60"><br>
+
+				</div>
+			</div>
+			<br>
+
+
+
+			<div>
+				<div>
+					<input type="submit" class="btn btn-primary " value="등록 ">
+					<input type="reset" class="btn btn-primary " value="취소 "
+						onclick="reset()">
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+	<script>
+		function checkDuplicate() {
+			let userId = document.getElementById("userId").value;
+
+			let duplicateResult = document.getElementById("duplicateResult");
+			let xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4 && xhr.status === 200) {
+					if (xhr.responseText === "true") {
+						duplicateResult.textContent = "이미 사용 중인 아이디입니다.";
+						duplicateResult.style.color = "red";
+					} else {
+						duplicateResult.textContent = "사용 가능한 아이디입니다.";
+						duplicateResult.style.color = "green";
+					}
+				}
+			};
+			xhr.open("GET", "checkduplicateId.jsp?userId=" + userId, true);
+			xhr.send();
+		}
+		//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+		function sample4_execDaumPostcode() {
+			new daum.Postcode(
+					{
+						oncomplete : function(data) {
+							// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+							// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+							// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+							var roadAddr = data.roadAddress; // 도로명 주소 변수
+							var extraRoadAddr = ''; // 참고 항목 변수
+
+							// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+							// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+							if (data.bname !== ''
+									&& /[동|로|가]$/g.test(data.bname)) {
+								extraRoadAddr += data.bname;
+							}
+							// 건물명이 있고, 공동주택일 경우 추가한다.
+							if (data.buildingName !== ''
+									&& data.apartment === 'Y') {
+								extraRoadAddr += (extraRoadAddr !== '' ? ', '
+										+ data.buildingName : data.buildingName);
+							}
+							// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+							if (extraRoadAddr !== '') {
+								extraRoadAddr = ' (' + extraRoadAddr + ')';
+							}
+
+							// 우편번호와 주소 정보를 해당 필드에 넣는다.
+							document.getElementById('sample4_postcode').value = data.zonecode;
+							document.getElementById("sample4_roadAddress").value = roadAddr;
+							document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+
+							document.getElementById("sample4_engAddress").value = data.addressEnglish;
+
+							// 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+							if (roadAddr !== '') {
+								document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+							} else {
+								document.getElementById("sample4_extraAddress").value = '';
+							}
+
+							var guideTextBox = document.getElementById("guide");
+							// 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+							if (data.autoRoadAddress) {
+								var expRoadAddr = data.autoRoadAddress
+										+ extraRoadAddr;
+								guideTextBox.innerHTML = '(예상 도로명 주소 : '
+										+ expRoadAddr + ')';
+								guideTextBox.style.display = 'block';
+
+							} else if (data.autoJibunAddress) {
+								var expJibunAddr = data.autoJibunAddress;
+								guideTextBox.innerHTML = '(예상 지번 주소 : '
+										+ expJibunAddr + ')';
+								guideTextBox.style.display = 'block';
+							} else {
+								guideTextBox.innerHTML = '';
+								guideTextBox.style.display = 'none';
+							}
+						}
+					}).open();
+		}
+		function selfinput() {
+
+			let select = document.getElementsByName("mail2")[0];
+			let inputmail3 = document.getElementsByName("mail3")[0];
+			if (select.value === "직접입력") {
+				inputmail3.style.display = "inline";
+			} else {
+				inputmail3.style.display = "none";
+			}
+		}
+	</script>
 </body>
 </html>

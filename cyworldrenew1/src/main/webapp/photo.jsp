@@ -23,13 +23,12 @@ String user_profile_photo = null;
 String user_hello_word = null;
 String gender = null;
 int user_today_visit = 0;
-int user_total_visit = 0;
+int user_total_visit = 0; 
 
 String user_background = "";
 List<String> photo_url = new ArrayList<>();
 List<String> photo_contents = new ArrayList<>();
 List<String> photo_date = new ArrayList<>();
-
 
 try {
 	String sql = "select * from user where user_id=?";
@@ -61,7 +60,6 @@ try {
 		user_today_visit = rs2.getInt("user_today_visit");
 		user_total_visit = rs2.getInt("user_total_visit");
 
-
 	}
 	String sql3 = "select * from photo where user_id=? order by photo_date DESC;";
 
@@ -85,22 +83,25 @@ try {
 <head>
 
 <title>Insert title here</title>
-<link href="photo.css" rel="stylesheet" type="text/css" />
-<link href = "backgroundEffect/sakura.css"rel="stylesheet" type="text/css" />
+<link href="photo1.css" rel="stylesheet" type="text/css" />
+<link href="backgroundEffect/sakura.css" rel="stylesheet"
+	type="text/css" />
 
 
 </head>
 
 <body>
-  <script>
-    // 이전 페이지 새로고침
-    if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
-      location.reload();
-    }
-  </script>
-  <script type="text/javascript" src="photo.js"></script>
+	<script>
+		// 이전 페이지 새로고침
+		if (window.performance
+				&& window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
+			location.reload();
+		}
+	</script>
+	<script type="text/javascript" src="photo.js"></script>
 	<div id="mini_container">
-		<div id="mini_background1" style="width: 100%;
+		<div id="mini_background1"
+			style="width: 100%;
 	height: 100%;
 	background: url(<%=user_background%>) no-repeat center;
 	background-size: 100% 100%;
@@ -170,25 +171,26 @@ try {
 									<%
 									}
 									%>
-									<script type="text/javascript">											// 파일 선택 창 열기 및 자동 전환
-									function selectFile() {
-										document.getElementById(
-												'fileinput').click();
-									}
+									<script type="text/javascript">
+										// 파일 선택 창 열기 및 자동 전환
+										function selectFile() {
+											document
+													.getElementById('fileinput')
+													.click();
+										}
 
-									// 파일이 선택되었을 때 자동으로 페이지 전환
-									document
-											.getElementById('fileinput')
-											.addEventListener(
-													'change',
-													function() {
-														document
-																.getElementById(
-																		'edit_input')
-																.click();
-													});
-													
-																</script>
+										// 파일이 선택되었을 때 자동으로 페이지 전환
+										document
+												.getElementById('fileinput')
+												.addEventListener(
+														'change',
+														function() {
+															document
+																	.getElementById(
+																			'edit_input')
+																	.click();
+														});
+									</script>
 									<hr
 										style="width: 95%; position: absolute; top: 32%; border: 1px solid black;">
 									<div id="today_feeling">
@@ -205,7 +207,7 @@ try {
 											onclick="feeling('슬퍼', 2)" style="display: none;" value="슬퍼">
 									</div>
 
-									
+
 
 
 
@@ -242,7 +244,7 @@ try {
 										</form>
 									</div>
 
-									
+
 									<hr
 										style="width: 95%; position: absolute; top: 71%; border: 1px solid black;">
 									<div id="user_name_email">
@@ -270,7 +272,8 @@ try {
 
 
 					</div>
-<div id="left_right_borderdiv" style="position:absolute;width:1%;height:78%;border-left:1px solid black;top:13%;left:30.5%"></div>
+					<div id="left_right_borderdiv"
+						style="position: absolute; width: 1%; height: 78%; border-left: 1px solid black; top: 13%; left: 30.5%"></div>
 					<div id="center_contentsdiv">
 						<div id="center_subject">
 							<div id="user_mini_subject">
@@ -308,69 +311,85 @@ try {
 								</div>
 							</div>
 
-						
+
 						</div>
 
 
 						<div id="center_contentsdiv1">
 
-								<div id="center_contents">
-							<div id="center_photocontentsdiv">
-								<div id="center_photocontentsdiv1">
-								<button onclick="center_photo_hide()" style="position: absolute;top:15%; right:23%">사진올리기</button>
-									<div id="center_photo_subject">사진첩</div>
-									<div id="center_photo_contents">
+							<div id="center_contents">
+								<div id="center_photocontentsdiv">
+									<div id="center_photocontentsdiv1">
+										<button onclick="center_photo_hide()"
+											style="position: absolute; top: 15%; right: 23%">사진올리기</button>
+										<div id="center_photo_subject">사진첩</div>
+										<div id="center_photo_contents">
 
-										<%
-										if (!user_id.isEmpty()&&!photo_date.isEmpty()) {
-											for (int i = 0; i < photo_date.size(); i++) {
-										%>
-										<div class="center_photo_box">
-											<%=photo_date.get(i)%>
+											<%
+											if (!user_id.isEmpty() && !photo_date.isEmpty()) {
+												for (int i = 0; i < photo_date.size(); i++) {
+											%>
+											<div class="center_photo_box">
+												<%=photo_date.get(i)%>
+												<br> <img src="userprofileimg/<%=photo_url.get(i)%>"
+													style="width: 100%; height: 85%; background-position: center; background-repeat: no-repeat; background-size: cover;">
+												<br>
+												<%=photo_contents.get(i)%>
+											</div>
 											<br>
-											<img src="userprofileimg/<%=photo_url.get(i)%>" style="width:100%;height:85%; background-position: center; background-repeat: no-repeat;background-size: cover;">
+											<hr size="5px" color="blue">
 											<br>
-											<%=photo_contents.get(i)%>
+											<%
+											}
+											} else {
+											%>
+											<div class="center_photo_box">사진이 없네요 업로드 해봐요</div>
+											<%
+											}
+											%>
 										</div>
-										<br>
-										<hr size="5px" color="blue">
-										<br>
-										<%
-										}
-										} else {
-										%>
-										<div class="center_photo_box">사진이 없네요 업로드 해봐요</div>
-										<%
-										}
-										%>
+
+										<div id="save_photo_img" style="display: none;">
+											<form action="save_photo_img.jsp" method="post"
+												enctype="multipart/form-data">
+												<input type="file" name="photo_url" id="photo_url"
+													style="height: 10%;"><br>
+												<br>
+												<textarea style="width: 100%; height: 75%"
+													placeholder="사진의 내용을 입력해주세요" id="F" name="photo_contents"></textarea>
+												<br>
+												<br>
+												<button type="reset" onclick="center_photo_block()"
+													style="float: right">취소</button>
+												<button type="submit" style="float: right">저장</button>
+
+											</form>
+										</div>
+										<script>
+											function center_photo_hide() {
+												document
+														.getElementById('center_photo_contents').style.display = 'none';
+												document
+														.getElementById('save_photo_img').style.display = 'block';
+											}
+											function center_photo_block() {
+												document
+														.getElementById('save_photo_img').style.display = 'none';
+												document
+														.getElementById('center_photo_contents').style.display = 'block';
+											}
+										</script>
+
 									</div>
 
-<div id="save_photo_img" style="display:none;"><form action="save_photo_img.jsp" method="post" enctype="multipart/form-data">
-<input type="file"name="photo_url" id="photo_url" style="height: 10%;"><br><br>
-<textarea style="width:100%;height:75%" placeholder="사진의 내용을 입력해주세요" id="F"name="photo_contents"></textarea>
-<br><br><button type="reset" onclick="center_photo_block()"style="float:right">취소</button>
-<button type="submit"  style="float:right">저장</button>
-
-</form></div>
-<script>
-function center_photo_hide(){									
-	document.getElementById('center_photo_contents').style.display = 'none';
-document.getElementById('save_photo_img').style.display = 'block';}
-function center_photo_block(){	document.getElementById('save_photo_img').style.display = 'none';
-document.getElementById('center_photo_contents').style.display = 'block';} 
-
-</script>
-
 								</div>
-
 							</div>
-						</div>
 						</div>
 					</div>
 
 					<div id="right_contentsdiv_border">
 						<div id="right_contentsdiv">
-							<div id="right_music"></div>
+			
 							<div id="right_menu">
 								<div onclick="goToPage('index.jsp')">
 									<input type="radio" id="home" class="radioG" name="radio1"
@@ -422,23 +441,29 @@ document.getElementById('center_photo_contents').style.display = 'block';}
 							</div>
 						</div>
 					</div>
-								<div id="dotori_div">
-					<div id="current_dotori">보유도토리</div>
-					<div id = "having_effect"><a href ="having_effect.jsp">배경화면 바꾸기</a></div>
-					<div><a href="index.jsp"></a> 도토리 장터</div></div>
+					<div id="dotori_div">
+						<div id="current_dotori">보유도토리</div>
+						<div id="having_effect">
+							<a href="having_effect.jsp">배경화면 바꾸기</a>
+						</div>
+						<div>
+							<a href="index.jsp"></a> 도토리 장터
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 
 	</div>
-	
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>
-$(window).load(function () {
-    $('body').sakura();
-});
-</script>
 
-<script src="backgroundEffect/sakura.js"></script>
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		$(window).load(function() {
+			$('body').sakura();
+		});
+	</script>
+
+	<script src="backgroundEffect/sakura.js"></script>
 </body>
 </html>

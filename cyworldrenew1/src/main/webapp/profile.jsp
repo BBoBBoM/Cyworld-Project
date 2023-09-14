@@ -68,7 +68,7 @@ try {
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="profile1.css" rel="stylesheet" type="text/css" />
+<link href="profile.css" rel="stylesheet" type="text/css" />
 <link href = "backgroundEffect/sakura.css"rel="stylesheet" type="text/css" />
 
 </head>
@@ -250,7 +250,7 @@ document
 							<div>
 								<input type="radio" id="board" class="radioG" name="radio1"
 									style="display: none;"> <a target="_parent"
-									href="index.html">게시판</a>
+									href="index.jsp">게시판</a>
 							</div>
 							<div>
 								<input type="radio" id="visitboard" class="radioG" name="radio1"

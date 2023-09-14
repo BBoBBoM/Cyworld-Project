@@ -28,6 +28,7 @@ a:active {
 }
 
 
+
 #all_contentsdiv {
 	width: 1300px;
 	height: 800px;
@@ -48,15 +49,6 @@ a:active {
 	float: left;
 	height: 760px;
 
-}
-
-#center_contentsdiv1 {
-	width: 675px;
-	float: left;
-	height: 670px;
-border:1px solid black;
-	padding:10px;
-	border-radius: 15px 0px 0px 15px;
 }
 
 #center_subject {
@@ -210,7 +202,7 @@ border:1px solid black;
 	width: 685px;
 	float: left;
 	height: 680px;
-border-right:1px solid black;
+border:1px solid black;
 	margin-left: 13px;
 	border-radius: 15px 0px 0px 15px;
 }
@@ -228,7 +220,9 @@ border-right:1px solid black;
 	margin-left: 5%;
 	margin-top: 2%;
 }
-
+#subjectname{
+	margin-top:5px;
+	text-align:center; font-size: 12px;}
 
 
 
@@ -339,6 +333,9 @@ border-right:1px solid black;
 	}
 }
 
+
+
+
 #right_menu>div>a {
 	margin-left: 5px;
 	line-height: 30px;
@@ -347,9 +344,9 @@ border-right:1px solid black;
 #right_music {
 	position: absolute;
 	margin-left: 10px;
-	top: 36px;
+	top: 55px;
 	width: 82%;
-	height: 17%;
+	height: 15%;
 }
 
 #right_purchase_contents {
@@ -394,151 +391,7 @@ border-right:1px solid black;
 
 
 
-
-#right_music {
-	position: absolute;
-	margin-left: 10px;
-	top: 36px;
-	width: 82%;
-	height: 17%;
-	border: 1px solid rebeccapurple;
-}
-
-
-
-#center_diarycontentsdiv1 {
-	box-sizing: border-box;
-	width: 650px;
-	float: right;
-	height: 645px;
-	border: 1px solid rgb(70, 144, 241);
-	margin-left: 13px;
-	margin-top: 20px;
-	word-wrap: break-word;
-	overflow-y: scroll;
-}
-
-#center_diary_contents {
-	width: 550px;
-	height: 300px;
-	border: 1px solid red;
-	margin-left: 45px;
-	margin-top: 130px;
-}
-
-#center_diary_calendar {
-	width: 550px;
-	height: 120px;
-	border: 1px solid rgb(233, 19, 161);
-	margin-left: 45px;
-	position: fixed;
-}
-
-
-input {
-	height: 20px;
-	font-size: 15px;
-	margin-bottom: 3px;
-}
-
-
-.center_diary_box {
-	width: 550px;
-	height: 300px;
-}
-
 #dotori_div{border:1px solid;
 		   position:absolute;
 		   width:10%;
 		   bottom:15%;right:9%;}
-		   
-		   
-		   #center_newupdate {
-	width: 49%;
-	height: 100%;
-	border: 1px solid black;
-	border-radius: 15px;
-	float: left;
-	padding: 10px;
-	background-color: white;
-	background: linear-gradient(to right, #ffe477, #f5e3d7);
-	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-}
-
-
-#center_contents_atag {
-	width: 49%;
-	height: 100%;
-	border: 1px solid black;
-	float: right;
-	border-radius: 15px;
-	padding: 10px;
-	background: linear-gradient(to left, #cbff91, #b1fa3b);
-	
-	box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.5);
-}
-
-#center_contents_atag>table {
-	padding: 0px;
-	width: 90%;
-	height: 95%;
-	border-spacing: 10px 3px;
-}
-
-td {
-	padding: 10px;
-	border-radius: 20px;
-	background: linear-gradient(-45deg, #f3ddd6, #f8d4e2, #d8f1fa, #c4f1e7);
-	background-size: 300% 300%;
-	animation: gradient 15s ease infinite;
-}
-
-
-
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-
-	50% {
-		background-position: 100% 50%;
-	}
-
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
-
-
-
-
-.count_span {
-	float: right;
-	animation: blink 5s infinite;
-}
-
-
-@keyframes blink {
-	0% {
-		opacity: 1;
-	}
-
-	50% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-#center_innerdiv1 {
-	height: 23%;
-}
-
-#visit_contents{width:100%; height:75%;margin-top:10px;padding:10px;	word-wrap: break-word;
-	overflow-y: scroll;background-color: rgb(211, 211, 250);border-radius:20px 0px 0px 20px }
-#visit_contents_innerdiv{width:90%; height: 35%;background-color: white;border-radius:10px;}
-#visit_info_div{margin:0 ;width: 100%;height:20%;border-bottom:1px solid;padding-left:10px;padding-top:3px;}
-#visit_contents_div{height:80%;padding:10px;}
